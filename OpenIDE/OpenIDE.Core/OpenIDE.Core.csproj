@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFA18CCB-077C-4040-897B-F12E4D44AD73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenIDE.Core</RootNamespace>
+    <AssemblyName>OpenIDE.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DigitalRune.Windows.TextEditor">
+      <HintPath>..\..\..\..\..\Downloads\DigitalRune-TextEditor-1.3.1\DigitalRune-TextEditor-1.3.1\DigitalRune.Windows.TextEditor\bin\Debug\DigitalRune.Windows.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.6.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.9.6\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Scripting">
+      <HintPath>..\..\..\eStd\eStd\eStd\Build\System.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OpenIDE\bin\Debug\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OpenIDE\bin\Debug\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OpenIDE\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OpenIDE\bin\Debug\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OpenIDE\bin\Debug\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="updateSystemDotNet.Controller">
+      <HintPath>..\..\..\..\..\..\..\Program Files\updateSystem.NET\Deploy\updateSystemDotNet.Controller.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Argument.cs" />
+    <Compile Include="Dialogs\BetaKeyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BetaKeyDialog.Designer.cs">
+      <DependentUpon>BetaKeyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewProjectDialog.Designer.cs">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewItemDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewItemDialog.Designer.cs">
+      <DependentUpon>NewItemDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Pluginmanager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Pluginmanager.Designer.cs">
+      <DependentUpon>Pluginmanager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorBuilder.cs" />
+    <Compile Include="Extensibility\ItemTemplate.cs" />
+    <Compile Include="Extensibility\Library.cs" />
+    <Compile Include="Extensibility\Plugin.cs" />
+    <Compile Include="Extensibility\ProjectTemplate.cs" />
+    <Compile Include="Extensibility\StreamProvider.cs" />
+    <Compile Include="FilterBuilder\FilterBuilder.cs" />
+    <Compile Include="FilterBuilder\FilterGroup.cs" />
+    <Compile Include="FilterBuilder\Helpers.cs" />
+    <Compile Include="FilterBuilder\SystemFileType.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="FunctionCollection.cs" />
+    <Compile Include="JSON\ArrayValue.cs" />
+    <Compile Include="JSON\Framework\CharParsers.cs" />
+    <Compile Include="JSON\Framework\JsonParserFromString.cs" />
+    <Compile Include="JSON\Framework\JsonParsers.cs" />
+    <Compile Include="JSON\Framework\Parser.cs" />
+    <Compile Include="JSON\Framework\ParserCombinatorExtensions.cs" />
+    <Compile Include="JSON\Framework\ParserCombinatorsMonad.cs" />
+    <Compile Include="JSON\Framework\Parsers.cs" />
+    <Compile Include="JSON\Framework\Result.cs" />
+    <Compile Include="JSON\Json.cs" />
+    <Compile Include="JSON\ObjectValue.cs" />
+    <Compile Include="LanguageManager.cs" />
+    <Compile Include="Localisation\BaseCatalog.cs" />
+    <Compile Include="Localisation\Catalog.cs" />
+    <Compile Include="Localisation\ICatalog.cs" />
+    <Compile Include="Localisation\Loaders\MoFileParser.cs" />
+    <Compile Include="Localisation\Plural\PluralFormProcessor.cs" />
+    <Compile Include="Options\PropertyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options\TabBrushes.cs" />
+    <Compile Include="Options\TabItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options\TabItemCollection.cs" />
+    <Compile Include="Options\TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options\TabPageContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options\TabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PluginCollection.cs" />
+    <Compile Include="Extensibility\PluginManager.cs" />
+    <Compile Include="ProjectSystem\File.cs" />
+    <Compile Include="ProjectSystem\FileCollection.cs" />
+    <Compile Include="ProjectSystem\Project.cs" />
+    <Compile Include="ProjectSystem\Solution.cs" />
+    <Compile Include="Prompt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyBag\ComplexProperty.cs" />
+    <Compile Include="PropertyBag\DynamicProperty.cs" />
+    <Compile Include="PropertyBag\SimpleProperty.cs" />
+    <Compile Include="PropertyStorage.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SKGL.cs" />
+    <Compile Include="SolutionExplorer.cs" />
+    <Compile Include="StartPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updater.cs" />
+    <Compile Include="ViewSelector.cs" />
+    <Compile Include="Views\EditorView.cs" />
+    <Compile Include="Views\PropertiesView.cs" />
+    <Compile Include="Workspace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\BetaKeyDialog.resx">
+      <DependentUpon>BetaKeyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewProjectDialog.resx">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewItemDialog.resx">
+      <DependentUpon>NewItemDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Pluginmanager.resx">
+      <DependentUpon>Pluginmanager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\PropertyControl.resx">
+      <DependentUpon>PropertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenIDE.Core.Contracts\OpenIDE.Core.Contracts.csproj">
+      <Project>{e7cbe8ba-0be4-45fe-ac01-56599f58a7bc}</Project>
+      <Name>OpenIDE.Core.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

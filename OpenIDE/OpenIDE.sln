@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE", "OpenIDE\OpenIDE.csproj", "{E90A0878-28A0-493C-8F22-A7436D00C74E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Core", "OpenIDE.Core\OpenIDE.Core.csproj", "{FFA18CCB-077C-4040-897B-F12E4D44AD73}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OpenIDE_Setup", "OpenIDE_Setup\OpenIDE_Setup.vdproj", "{1A5336E3-B9D9-4AFF-A12F-6019122F4425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Core.Contracts", "OpenIDE.Core.Contracts\OpenIDE.Core.Contracts.csproj", "{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{260B9F65-58CD-4E54-BB53-6D1232AD35B6}"
+	ProjectSection(SolutionItems) = preProject
+		ToDo.txt = ToDo.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{69AD7D95-EE84-42D8-B52C-3F0F006D6473}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Std", "Std", "{24B35A54-BB40-47B8-BDB1-CA65E15D2EA3}"
+	ProjectSection(SolutionItems) = preProject
+		Library\Std\Base64.ts = Library\Std\Base64.ts
+		Library\Std\Class.ts = Library\Std\Class.ts
+		Library\Std\Dictionary.ts = Library\Std\Dictionary.ts
+		Library\Std\Enum.ts = Library\Std\Enum.ts
+		Library\Std\Event.ts = Library\Std\Event.ts
+		Library\Std\Exceptions.ts = Library\Std\Exceptions.ts
+		Library\Std\Iterator.ts = Library\Std\Iterator.ts
+		Library\Std\List.ts = Library\Std\List.ts
+		Library\Std\Module.ts = Library\Std\Module.ts
+		Library\Std\Range.ts = Library\Std\Range.ts
+		Library\Std\StringBuilder.ts = Library\Std\StringBuilder.ts
+		Library\Std\Tuple.ts = Library\Std\Tuple.ts
+		Library\Std\Types.ts = Library\Std\Types.ts
+		Library\Std\Uri.ts = Library\Std\Uri.ts
+		Library\Std\Utilities.ts = Library\Std\Utilities.ts
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90A0878-28A0-493C-8F22-A7436D00C74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90A0878-28A0-493C-8F22-A7436D00C74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90A0878-28A0-493C-8F22-A7436D00C74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90A0878-28A0-493C-8F22-A7436D00C74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA18CCB-077C-4040-897B-F12E4D44AD73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA18CCB-077C-4040-897B-F12E4D44AD73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA18CCB-077C-4040-897B-F12E4D44AD73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA18CCB-077C-4040-897B-F12E4D44AD73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5336E3-B9D9-4AFF-A12F-6019122F4425}.Debug|Any CPU.ActiveCfg = Debug
+		{1A5336E3-B9D9-4AFF-A12F-6019122F4425}.Release|Any CPU.ActiveCfg = Release
+		{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24B35A54-BB40-47B8-BDB1-CA65E15D2EA3} = {69AD7D95-EE84-42D8-B52C-3F0F006D6473}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		AssemblyInfoFilePath = Properties\AsemblyInfo.cs
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = True
+		UpdateAssemblyInfoVersion = True
+		AssemblyVersionSettings = None.None.DayStamp.Increment
+		AssemblyFileVersionSettings = None.None.DayStamp.Increment
+		AssemblyInfoVersionSettings = None.None.DayStamp.Increment
+	EndGlobalSection
+EndGlobal

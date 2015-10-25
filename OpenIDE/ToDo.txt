@@ -1,0 +1,2 @@
+[ ] Splashscreen-image
+[ ] open selected file in new view, if its opened activate it

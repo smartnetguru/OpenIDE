@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenIDE\n"
+"POT-Creation-Date: 2015-10-25 14:14+0100\n"
+"PO-Revision-Date: 2015-10-25 14:14+0100\n"
+"Last-Translator: Chris Anders <info@furesoft.de>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../../../../../../../../../GitHub/OpenIDE/OpenIDE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: OpenIDE.Core/Dialogs/BetaKeyDialog.cs:21
+msgid "Please enter your Beta-Key to try OpenDevelop:"
+msgstr "Please enter your Beta-Key to try OpenDevelop:"
+
+#: OpenIDE.Core/Dialogs/BetaKeyDialog.cs:23
+#: OpenIDE.Core/Dialogs/NewItemDialog.cs:44
+#: OpenIDE.Core/Dialogs/NewProjectDialog.cs:44
+msgid "OK"
+msgstr "OK"
+
+#: OpenIDE.Core/Dialogs/BetaKeyDialog.cs:24
+#: OpenIDE.Core/Dialogs/NewItemDialog.cs:45
+#: OpenIDE.Core/Dialogs/NewProjectDialog.cs:45
+msgid "Cancel"
+msgstr "Cancel"
+
+#: OpenIDE.Core/Dialogs/BetaKeyDialog.cs:41
+msgid "Your Beta-Key is expired!!"
+msgstr "Your Beta-Key is expired!!"
+
+#: OpenIDE.Core/Dialogs/BetaKeyDialog.cs:52
+msgid "Your Beta-Key is invalid!!"
+msgstr "Your Beta-Key is invalid!!"
+
+#: OpenIDE.Core/Dialogs/NewItemDialog.cs:41
+msgid "New Item"
+msgstr "New Item"
+
+#: OpenIDE.Core/Dialogs/NewItemDialog.cs:42
+#: OpenIDE.Core/Dialogs/NewProjectDialog.cs:42 OpenIDE/Form1.cs:67
+msgid "Name"
+msgstr "Name"
+
+#: OpenIDE.Core/Dialogs/NewProjectDialog.cs:41 OpenIDE.Core/StartPage.cs:17
+msgid "New Project"
+msgstr "New Project"
+
+#: OpenIDE.Core/Dialogs/PluginManager.cs:22
+msgid "PluginManager"
+msgstr "PluginManager"
+
+#: OpenIDE.Core/Dialogs/PluginManager.cs:23
+msgid "Installed Plugins"
+msgstr "InstalledPlugins"
+
+#: OpenIDE.Core/Dialogs/PluginManager.cs:24
+msgid "Online Plugins"
+msgstr "Online Plugins"
+
+#: OpenIDE.Core/StartPage.cs:16
+msgid "Start"
+msgstr "Start"
+
+#: OpenIDE.Core/StartPage.cs:18
+msgid "Open Project"
+msgstr "Open Project"
+
+#: OpenIDE/Form1.cs:36
+msgid "Startpage"
+msgstr "Startpage"
+
+#: OpenIDE/Form1.cs:37
+msgid "SolutionExplorer"
+msgstr "SolutionExplorer"
+
+#: OpenIDE/Form1.cs:38
+msgid "Toolbox"
+msgstr "Toolbox"
+
+#: OpenIDE/Form1.cs:39
+msgid "Properties"
+msgstr "Properties"
+
+#: OpenIDE/Form1.cs:41
+msgid "File"
+msgstr "File"
+
+#: OpenIDE/Form1.cs:42
+msgid "Edit"
+msgstr "Edit"
+
+#: OpenIDE/Form1.cs:43
+msgid "View"
+msgstr "View"
+
+#: OpenIDE/Form1.cs:44
+msgid "Tools"
+msgstr "Tools"
+
+#: OpenIDE/Form1.cs:45
+msgid "Window"
+msgstr "Window"
+
+#: OpenIDE/Form1.cs:46
+msgid "Help"
+msgstr "Help"
+
+#: OpenIDE/Form1.cs:48
+msgid "Check for Updates"
+msgstr "Check for Updates"
+
+#: OpenIDE/Form1.cs:50
+msgid "Open Solution"
+msgstr "Open Solution"
+
+#: OpenIDE/Form1.cs:51
+msgid "Exit"
+msgstr "Exit"
+
+#: OpenIDE/Form1.cs:57
+msgid "An Update is available."
+msgstr "An Update is available."
+
+#: OpenIDE/Form1.cs:67
+msgid "Please specifiy an solution name"
+msgstr "Please specifiy an solution name"
