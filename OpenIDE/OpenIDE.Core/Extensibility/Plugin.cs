@@ -73,6 +73,8 @@ namespace OpenIDE.Core.Extensibility
 
                 Dependencies.Add(l);
             }));
+
+            _engine.Add("plugin", this);
         }
 
         public static Plugin Load(string name)

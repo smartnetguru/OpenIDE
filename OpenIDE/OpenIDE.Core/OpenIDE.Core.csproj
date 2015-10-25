@@ -186,6 +186,7 @@
     <Compile Include="ViewSelector.cs" />
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\PropertiesView.cs" />
+    <Compile Include="Views\SplittedView.cs" />
     <Compile Include="Workspace.cs" />
   </ItemGroup>
   <ItemGroup>

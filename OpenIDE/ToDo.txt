@@ -1,2 +1,4 @@
 [ ] Splashscreen-image
 [ ] open selected file in new view, if its opened activate it
+[ ] add spliited view to use 2 views in 1
+    with resizing support
