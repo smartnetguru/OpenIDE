@@ -26,6 +26,11 @@ namespace OpenIDE.Core.Contracts
             return v;
         }
 
+        public virtual void Create(byte[] raw)
+        {
+
+        }
+
         public Control GetView()
         {
             return _view;

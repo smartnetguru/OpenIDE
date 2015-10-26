@@ -1,4 +1,5 @@
-﻿using OpenIDE.Core.Contracts;
+﻿using DigitalRune.Windows.TextEditor;
+using OpenIDE.Core.Contracts;
 using OpenIDE.Core.Extensibility;
 using System.IO;
 
@@ -9,9 +10,14 @@ namespace OpenIDE.Core.Views
         public EditorView(ItemTemplate p)
         {
             var e = EditorBuilder.Build(p.Extension, null, null, null);
-            e.Text = new StreamReader(new MemoryStream(Data)).ReadToEnd();
 
             _view = e;
+        }
+
+        public override void Create(byte[] raw)
+        {
+            var e = (TextEditorControl)_view;
+            e.Text = new StreamReader(new MemoryStream(raw)).ReadToEnd();
         }
     }
 }

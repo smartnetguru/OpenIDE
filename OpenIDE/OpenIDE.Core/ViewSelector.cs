@@ -11,12 +11,15 @@ namespace OpenIDE.Core
             if(it.View != null)
             {
                 it.View.Data = data;
+                it.View.Create(data);
+
                 return it.View;
             }
             else
             {
                 var v = new EditorView(it);
                 v.Data = data;
+                v.Create(data);
 
                 return v;
             }
