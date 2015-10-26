@@ -1,5 +1,6 @@
 ﻿using OpenIDE.Core.Contracts;
 using OpenIDE.Core.Extensibility;
+using System.IO;
 
 namespace OpenIDE.Core.Views
 {
@@ -7,7 +8,10 @@ namespace OpenIDE.Core.Views
     {
         public EditorView(ItemTemplate p)
         {
-            this._view = EditorBuilder.Build(p.Extension, null, null, null);
+            var e = EditorBuilder.Build(p.Extension, null, null, null);
+            e.Text = new StreamReader(new MemoryStream(Data)).ReadToEnd();
+
+            _view = e;
         }
     }
 }

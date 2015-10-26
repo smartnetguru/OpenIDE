@@ -1,5 +1,6 @@
 ﻿using OpenIDE.Core;
 using OpenIDE.Core.Dialogs;
+using OpenIDE.Core.Extensibility;
 using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Views;
 using System;
@@ -181,12 +182,40 @@ namespace OpenIDE
         private void explorerTreeView_NodeMouseDoubleClick(object sender, RadTreeViewEventArgs e)
         {
             var p = e.Node.Tag as PropertiesView;
+            var f = e.Node.Tag as Core.ProjectSystem.File;
+
             if (p != null)
             {
                 var v = new PropertiesView();
 
                 var doc = new DocumentWindow(e.Node.Text);
                 doc.Controls.Add(v.GetView());
+
+                dock.AddDocument(doc);
+            }
+            if(f != null)
+            {
+                ItemTemplate np = null;
+                Plugin nn = null;
+
+                foreach (var item in Workspace.PluginManager.Plugins)
+                {
+                    foreach (var it in item.ItemTemplates)
+                    {
+                        if(it.ProjectID == f.ID)
+                        {
+                            np = it;
+                            nn = item;
+                        }
+                    }
+                }
+
+                var raw = System.IO.File.ReadAllBytes(new FileInfo(Workspace.SolutionPath).Directory.FullName + "\\" + f.Src);
+
+                nn.Events.Fire("OnCreateItem", f, raw);
+
+                var doc = new DocumentWindow(f.Name);
+                doc.Controls.Add(ViewSelector.Select(np, raw).GetView());
 
                 dock.AddDocument(doc);
             }

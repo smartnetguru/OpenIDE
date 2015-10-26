@@ -29,3 +29,5 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenID
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenIDE.Core.Dialogs.BetaKeyDialog.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenIDE.Core.Options.ProjectProperties.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenIDE.Core.Dialogs.Pluginmanager.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\OpenIDE.Library.dll
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\OpenIDE.Library.pdb
