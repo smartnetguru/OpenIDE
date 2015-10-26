@@ -28,3 +28,5 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\bin\Debug\OpenIDE.Cor
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\bin\Debug\OpenIDE.Core.Contracts.pdb
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\bin\Debug\pplStuff.Controls.ToolBox.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.SplashScreen.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\bin\Debug\OpenIDE.Library.dll
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\bin\Debug\OpenIDE.Library.pdb

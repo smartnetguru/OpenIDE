@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\HSLColor.cs" />
     <Compile Include="Base\JSON\Bson\BsonBinaryType.cs" />
     <Compile Include="Base\JSON\Bson\BsonBinaryWriter.cs" />
     <Compile Include="Base\JSON\Bson\BsonObjectId.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="Console\FirebugConsole.cs" />
     <Compile Include="Console\IFirebugConsoleOutput.cs" />
     <Compile Include="Console\StandardConsoleOutput.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="JSON.cs" />
     <Compile Include="Math.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
