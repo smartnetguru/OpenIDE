@@ -111,6 +111,7 @@
       <DependentUpon>Pluginmanager.cs</DependentUpon>
     </Compile>
     <Compile Include="EditorBuilder.cs" />
+    <Compile Include="EventStorage.cs" />
     <Compile Include="Extensibility\ItemTemplate.cs" />
     <Compile Include="Extensibility\Library.cs" />
     <Compile Include="Extensibility\Plugin.cs" />
@@ -221,6 +222,10 @@
     <ProjectReference Include="..\OpenIDE.Core.Contracts\OpenIDE.Core.Contracts.csproj">
       <Project>{e7cbe8ba-0be4-45fe-ac01-56599f58a7bc}</Project>
       <Name>OpenIDE.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenIDE.Library\OpenIDE.Library.csproj">
+      <Project>{8048d1bd-c332-4b60-a114-da04cf131698}</Project>
+      <Name>OpenIDE.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

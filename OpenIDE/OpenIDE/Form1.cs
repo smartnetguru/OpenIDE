@@ -92,11 +92,12 @@ namespace OpenIDE
                 f.Name = np.Filename;
                 f.Type = np.Type;
                 
-
                 Workspace.Solution.Projects.Add(f);
 
                 explorerTreeView.Nodes.Clear();
                 explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution));
+
+                np.Plugin.Events.Fire("OnCreateProject", f);
 
                 Workspace.Solution.Save(Workspace.SolutionPath);
             }
@@ -146,6 +147,8 @@ namespace OpenIDE
                 var fi = new FileInfo(Workspace.SolutionPath).Directory.FullName + "\\" + f.Name;
 
                 System.IO.File.WriteAllBytes(fi, np.Template.Raw);
+
+                np.Plugin.Events.Fire("OnCreateItem", f);
 
                 var doc = new DocumentWindow(f.Name);
                 doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi)).GetView());

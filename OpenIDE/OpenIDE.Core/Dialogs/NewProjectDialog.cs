@@ -9,6 +9,7 @@ namespace OpenIDE.Core.Dialogs
         public Guid Type { get; set; }
         public string Filename { get; set; }
         public ProjectTemplate Template { get; set; }
+        public Plugin Plugin { get; set; }
 
         public NewProjectDialog()
         {
@@ -28,6 +29,8 @@ namespace OpenIDE.Core.Dialogs
                     i.Tag = t;
                     i.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
                     i.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+
+                    Plugin = item;
 
                     projectsList.Items.Add(i);
                 }

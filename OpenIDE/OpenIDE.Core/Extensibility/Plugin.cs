@@ -22,9 +22,10 @@ namespace OpenIDE.Core.Extensibility
         private Dictionary<string, string> Highlightings;
         public PropertyStorage Properties = new PropertyStorage();
         public List<Library> Dependencies { get; set; }
-        public string Language { get; set; }
 
+        public string Language { get; set; }
         public string Filename { get; set; }
+        public EventStorage Events { get; set; }
 
         public delegate object StaticMethodFunc(params object[] args);
 
@@ -38,6 +39,8 @@ namespace OpenIDE.Core.Extensibility
 
             Highlightings = new Dictionary<string, string>();
             Dependencies = new List<Library>();
+
+            Events = new EventStorage();
         }
 
         private void InitEngine(ZipFile z)
@@ -163,6 +166,11 @@ namespace OpenIDE.Core.Extensibility
                     Dependencies.Add(l);
                 }
             }
+        }
+
+        public void AddEventListener(string name, dynamic callback)
+        {
+            Events.AddListener(name, callback);
         }
 
         private void ReadItemtemplates(ZipFile z)
