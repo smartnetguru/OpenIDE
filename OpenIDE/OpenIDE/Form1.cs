@@ -148,7 +148,7 @@ namespace OpenIDE
 
                 System.IO.File.WriteAllBytes(fi, np.Template.Raw);
 
-                np.Plugin.Events.Fire("OnCreateItem", f);
+                np.Plugin.Events.Fire("OnCreateItem", f, np.Template.Raw);
 
                 var doc = new DocumentWindow(f.Name);
                 doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi)).GetView());
