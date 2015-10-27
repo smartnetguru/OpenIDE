@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1444564202_common_bookmark_book_open.ico</ApplicationIcon>
+    <ApplicationIcon>OpenIDEIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DigitalRune.Windows.TextEditor">
@@ -121,7 +121,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1444564202_common_bookmark_book_open.ico" />
+    <Content Include="OpenIDEIcon.ico" />
     <None Include="Resources\splash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
