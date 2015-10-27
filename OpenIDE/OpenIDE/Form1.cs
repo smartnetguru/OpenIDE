@@ -233,5 +233,11 @@ namespace OpenIDE
             var dlg = new Pluginmanager();
             dlg.ShowDialog();
         }
+
+        private void aboutMenuItem_Click(object sender, EventArgs e)
+        {
+            var n = new RadAboutBox1();
+            n.ShowDialog();
+        }
     }
 }

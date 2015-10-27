@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup1 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dockWindowPlaceholder1 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
             this.fileMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.newMenuItem = new Telerik.WinControls.UI.RadMenuItem();
@@ -52,7 +52,6 @@
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.dock = new Telerik.WinControls.UI.Docking.RadDock();
             this.toolboxWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.toolBox1 = new pplStuff.Controls.ToolBox();
@@ -72,6 +71,8 @@
             this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
+            this.aboutMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dock)).BeginInit();
             this.dock.SuspendLayout();
@@ -230,7 +231,8 @@
             this.helpMenuItem.AccessibleDescription = "Help";
             this.helpMenuItem.AccessibleName = "Help";
             this.helpMenuItem.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.checkforUpdatesMenuItem});
+            this.checkforUpdatesMenuItem,
+            this.aboutMenuItem});
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Text = "Help";
             // 
@@ -266,15 +268,6 @@
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton1});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
-            // 
-            // commandBarButton1
-            // 
-            this.commandBarButton1.AccessibleDescription = "commandBarButton1";
-            this.commandBarButton1.AccessibleName = "commandBarButton1";
-            this.commandBarButton1.DisplayName = "commandBarButton1";
-            this.commandBarButton1.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton1.Image")));
-            this.commandBarButton1.Name = "commandBarButton1";
-            this.commandBarButton1.Text = "commandBarButton1";
             // 
             // dock
             // 
@@ -506,6 +499,23 @@
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "VisualStudio2012Dark";
             // 
+            // commandBarButton1
+            // 
+            this.commandBarButton1.AccessibleDescription = "commandBarButton1";
+            this.commandBarButton1.AccessibleName = "commandBarButton1";
+            this.commandBarButton1.DisplayName = "commandBarButton1";
+            this.commandBarButton1.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton1.Image")));
+            this.commandBarButton1.Name = "commandBarButton1";
+            this.commandBarButton1.Text = "commandBarButton1";
+            // 
+            // aboutMenuItem
+            // 
+            this.aboutMenuItem.AccessibleDescription = "About";
+            this.aboutMenuItem.AccessibleName = "About";
+            this.aboutMenuItem.Name = "aboutMenuItem";
+            this.aboutMenuItem.Text = "About";
+            this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,5 +604,6 @@
         private pplStuff.Controls.ToolBox toolBox1;
         private Telerik.WinControls.UI.Docking.DockWindowPlaceholder dockWindowPlaceholder1;
         private Telerik.WinControls.UI.RadMenuItem pluginsMenuItem;
+        private Telerik.WinControls.UI.RadMenuItem aboutMenuItem;
     }
 }
