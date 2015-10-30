@@ -21,6 +21,8 @@ namespace OpenIDE.Core
                 props.Tag = new PropertiesView();
                 pn.Nodes.Add(props);
 
+                pn.Expanded = p.Expandet;
+
                 foreach (var f in p.Files)
                 {
                     var n = new RadTreeNode(f.Src);

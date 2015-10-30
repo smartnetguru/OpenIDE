@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Argument.cs" />
+    <Compile Include="Arguments.cs" />
     <Compile Include="Dialogs\BetaKeyDialog.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -5,7 +5,6 @@ using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Views;
 using System;
 using System.IO;
-using System.Linq;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Docking;
