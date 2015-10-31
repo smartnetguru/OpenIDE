@@ -11,11 +11,6 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OpenIDE_Setup", "OpenIDE_Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Core.Contracts", "OpenIDE.Core.Contracts\OpenIDE.Core.Contracts.csproj", "{E7CBE8BA-0BE4-45FE-AC01-56599F58A7BC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{260B9F65-58CD-4E54-BB53-6D1232AD35B6}"
-	ProjectSection(SolutionItems) = preProject
-		ToDo.txt = ToDo.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{69AD7D95-EE84-42D8-B52C-3F0F006D6473}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Std", "Std", "{24B35A54-BB40-47B8-BDB1-CA65E15D2EA3}"

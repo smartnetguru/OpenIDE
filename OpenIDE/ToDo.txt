@@ -2,8 +2,7 @@
 [-] create folder for project
 [-] create properties folder
 [ ] create project system
-[-] open project without solution 
-[-] save state of node - expandet (true|false) 
+[-] open project without solution
 
 [ ] open selected file in new view, if its opened activate it
 [ ] add spliited view to use 2 views in 1

@@ -87,30 +87,6 @@
   <ItemGroup>
     <Compile Include="Argument.cs" />
     <Compile Include="Arguments.cs" />
-    <Compile Include="Dialogs\BetaKeyDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\BetaKeyDialog.Designer.cs">
-      <DependentUpon>BetaKeyDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\NewProjectDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\NewProjectDialog.Designer.cs">
-      <DependentUpon>NewProjectDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\NewItemDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\NewItemDialog.Designer.cs">
-      <DependentUpon>NewItemDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\Pluginmanager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\Pluginmanager.Designer.cs">
-      <DependentUpon>Pluginmanager.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditorBuilder.cs" />
     <Compile Include="EventStorage.cs" />
     <Compile Include="Extensibility\ItemTemplate.cs" />
@@ -124,6 +100,15 @@
     <Compile Include="FilterBuilder\SystemFileType.cs" />
     <Compile Include="Function.cs" />
     <Compile Include="FunctionCollection.cs" />
+    <Compile Include="IntellisensDefinition\Argument.cs" />
+    <Compile Include="IntellisensDefinition\Definition.cs" />
+    <Compile Include="IntellisensDefinition\DefinitionReader.cs" />
+    <Compile Include="IntellisensDefinition\Description.cs" />
+    <Compile Include="IntellisensDefinition\Example.cs" />
+    <Compile Include="IntellisensDefinition\IDefinitionItem.cs" />
+    <Compile Include="IntellisensDefinition\ItemCollection.cs" />
+    <Compile Include="IntellisensDefinition\Method.cs" />
+    <Compile Include="IntellisensDefinition\Object.cs" />
     <Compile Include="JSON\ArrayValue.cs" />
     <Compile Include="JSON\Framework\CharParsers.cs" />
     <Compile Include="JSON\Framework\JsonParserFromString.cs" />
@@ -189,24 +174,13 @@
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\PropertiesView.cs" />
     <Compile Include="Views\SplittedView.cs" />
+    <Compile Include="WindowCollection.cs" />
     <Compile Include="Workspace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dialogs\BetaKeyDialog.resx">
-      <DependentUpon>BetaKeyDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewProjectDialog.resx">
-      <DependentUpon>NewProjectDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewItemDialog.resx">
-      <DependentUpon>NewItemDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Pluginmanager.resx">
-      <DependentUpon>Pluginmanager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Options\PropertyControl.resx">
       <DependentUpon>PropertyControl.cs</DependentUpon>
     </EmbeddedResource>

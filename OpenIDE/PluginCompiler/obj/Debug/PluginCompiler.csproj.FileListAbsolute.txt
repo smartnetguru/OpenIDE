@@ -8,7 +8,6 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\upda
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\OpenIDE.Core.Contracts.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\Telerik.WinControls.RadDock.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\System.Scripting.dll
-C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\OpenIDE.Library.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\Telerik.WinControls.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\PluginCompiler\bin\Debug\TelerikCommon.dll

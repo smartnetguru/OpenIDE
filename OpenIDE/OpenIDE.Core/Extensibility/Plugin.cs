@@ -22,6 +22,7 @@ namespace OpenIDE.Core.Extensibility
         private Dictionary<string, string> Highlightings;
         public PropertyStorage Properties = new PropertyStorage();
         public List<Library> Dependencies { get; set; }
+        public WindowCollection Windows { get; set; }
 
         public string Language { get; set; }
         public string Filename { get; set; }
@@ -41,6 +42,7 @@ namespace OpenIDE.Core.Extensibility
             Dependencies = new List<Library>();
 
             Events = new EventStorage();
+            Windows = new WindowCollection();
         }
 
         private void InitEngine(ZipFile z)
@@ -94,6 +96,7 @@ namespace OpenIDE.Core.Extensibility
             {
                 return OpenIDE.Library.Functions.Hexadecimal(_);
             }));
+            _engine.Add("register_window", new Action<string, Window>((n, w)=> Windows.Add(n, w)));           
 
             _engine.Add("plugin", this);
 

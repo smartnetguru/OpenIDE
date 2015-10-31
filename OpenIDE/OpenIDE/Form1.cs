@@ -1,6 +1,7 @@
 ﻿using OpenIDE.Core;
 using OpenIDE.Core.Dialogs;
 using OpenIDE.Core.Extensibility;
+using OpenIDE.Core.IntellisensDefinition;
 using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Views;
 using System;
@@ -237,6 +238,16 @@ namespace OpenIDE
         {
             var n = new RadAboutBox1();
             n.ShowDialog();
+        }
+
+        private void explorerTreeView_NodeExpandedChanged(object sender, RadTreeViewEventArgs e)
+        {
+            var proj = e.Node.Tag as Project;
+            if(proj != null)
+            {
+                proj.Expandet = e.Node.Expanded;
+                Workspace.Solution.Save(Workspace.SolutionPath);
+            }
         }
     }
 }
