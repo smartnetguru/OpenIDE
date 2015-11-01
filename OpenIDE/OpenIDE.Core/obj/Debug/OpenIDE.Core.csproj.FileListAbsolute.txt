@@ -27,3 +27,5 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\Teleri
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\Telerik.WinControls.UI.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\TelerikCommon.dll
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\GLib.Options.OptionsForm.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\GLib.Options.OptionsPanel.resources

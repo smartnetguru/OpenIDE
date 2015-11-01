@@ -1,12 +1,17 @@
 ﻿using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Properties;
 using OpenIDE.Core.Views;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using Telerik.WinControls.UI;
 
 namespace OpenIDE.Core
 {
     public class SolutionExplorer
     {
+        public static Dictionary<Guid, Image> Icons = new Dictionary<Guid, Image>();
+
         public static RadTreeNode Build(Project proj)
         {
             var pn = new RadTreeNode($"Project '{proj.Name}'", true);
@@ -20,10 +25,7 @@ namespace OpenIDE.Core
 
             foreach (var f in proj.Files)
             {
-                var n = new RadTreeNode(f.Src);
-                n.Tag = f;
-
-                // TODO: Add icon for file
+                var n = Build(f);
 
                 pn.Nodes.Add(n);
             }
@@ -44,6 +46,16 @@ namespace OpenIDE.Core
             }
 
             return ret;
+        }
+
+        public static RadTreeNode Build(File sol)
+        {
+            var n = new RadTreeNode(sol.Name);
+            n.Tag = sol;
+
+            n.Image = Icons[sol.ID];
+
+            return n;
         }
     }
 }

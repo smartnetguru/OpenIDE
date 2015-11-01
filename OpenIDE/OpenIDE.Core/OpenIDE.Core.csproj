@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
@@ -126,21 +127,35 @@
     <Compile Include="Localisation\ICatalog.cs" />
     <Compile Include="Localisation\Loaders\MoFileParser.cs" />
     <Compile Include="Localisation\Plural\PluralFormProcessor.cs" />
-    <Compile Include="Options\PropertyControl.cs">
+    <Compile Include="NotificationService.cs" />
+    <Compile Include="Options\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\OptionsForm.designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\OptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\OptionsPanel.Designer.cs">
+      <DependentUpon>OptionsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\OptionsPanelList.cs" />
+    <Compile Include="ProjectOptions\PropertyControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\TabBrushes.cs" />
-    <Compile Include="Options\TabItem.cs">
+    <Compile Include="ProjectOptions\TabBrushes.cs" />
+    <Compile Include="ProjectOptions\TabItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\TabItemCollection.cs" />
-    <Compile Include="Options\TabPage.cs">
+    <Compile Include="ProjectOptions\TabItemCollection.cs" />
+    <Compile Include="ProjectOptions\TabPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\TabPageContainer.cs">
+    <Compile Include="ProjectOptions\TabPageContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\TabStrip.cs">
+    <Compile Include="ProjectOptions\TabStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="PluginCollection.cs" />
@@ -170,6 +185,7 @@
       <DependentUpon>StartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Updater.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="ViewSelector.cs" />
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\PropertiesView.cs" />
@@ -181,7 +197,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Options\PropertyControl.resx">
+    <EmbeddedResource Include="Options\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\OptionsPanel.resx">
+      <DependentUpon>OptionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectOptions\PropertyControl.resx">
       <DependentUpon>PropertyControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

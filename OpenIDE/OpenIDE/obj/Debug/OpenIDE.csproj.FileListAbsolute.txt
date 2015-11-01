@@ -35,3 +35,5 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.Cor
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.Core.Dialogs.NewItemDialog.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.Core.Dialogs.NewProjectDialog.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.Core.Dialogs.Pluginmanager.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.Dialogs.OptionsDialog.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE\obj\Debug\OpenIDE.OptionsPages.GeneralOptionsPage.resources

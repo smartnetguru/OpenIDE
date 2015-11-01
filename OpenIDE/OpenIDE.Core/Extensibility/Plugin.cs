@@ -8,6 +8,7 @@ using OpenIDE.Core.JSON;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 
@@ -96,7 +97,10 @@ namespace OpenIDE.Core.Extensibility
             {
                 return OpenIDE.Library.Functions.Hexadecimal(_);
             }));
-            _engine.Add("register_window", new Action<string, Window>((n, w)=> Windows.Add(n, w)));           
+            _engine.Add("register_window", new Action<string, Window>((n, w)=> Windows.Add(n, w)));
+            _engine.Add("notify", new Action<string, string>((title, content) => 
+                                    NotificationService.Notify(title, content)));
+            _engine.Add("debug", Workspace.Output);
 
             _engine.Add("plugin", this);
 
@@ -142,9 +146,6 @@ namespace OpenIDE.Core.Extensibility
 
             p.ReadItemtemplates(z);
 
-            //p._engine.Execute(new StreamReader(z["main.js"].OpenReader()).ReadToEnd());
-
-            
             if (p.Info.ContainsKey("Language"))
             {
                 p.Language = p.Info["Language"].ToString();
@@ -171,6 +172,7 @@ namespace OpenIDE.Core.Extensibility
             p.ReadDependencies();
 
             p._engine.Execute(props);
+            p._engine.Execute(new StreamReader(z["main.js"].OpenReader()).ReadToEnd());
 
             return p;
         }
@@ -210,6 +212,7 @@ namespace OpenIDE.Core.Extensibility
 
                 te.Name = obj["Name"].ToString();
                 te.Extension = obj["Extension"].ToString();
+                te.ID = Guid.Parse(obj["ID"].ToString());
 
                 var ms = new MemoryStream();
                 z["Templates/Items/" + obj["Template"]].OpenReader().CopyTo(ms);
@@ -219,6 +222,7 @@ namespace OpenIDE.Core.Extensibility
                 if (Icons.Count > 0)
                 {
                     te.Icon = Icons[obj["Icon"].ToString()];
+                    SolutionExplorer.Icons.Add(te.ID, ResizeIcon(te.Icon, new Size(16, 16)));
                 }
 
                 if(obj.ContainsKey("View"))
@@ -233,6 +237,35 @@ namespace OpenIDE.Core.Extensibility
 
                 ItemTemplates.Add(te);
             }
+        }
+
+        private Image ResizeIcon(Image image, Size size, bool preserveAspectRatio = true)
+        {
+            int newWidth;
+            int newHeight;
+            if (preserveAspectRatio)
+            {
+                int originalWidth = image.Width;
+                int originalHeight = image.Height;
+                float percentWidth = (float)size.Width / (float)originalWidth;
+                float percentHeight = (float)size.Height / (float)originalHeight;
+                float percent = percentHeight < percentWidth ? percentHeight : percentWidth;
+                newWidth = (int)(originalWidth * percent);
+                newHeight = (int)(originalHeight * percent);
+            }
+            else
+            {
+                newWidth = size.Width;
+                newHeight = size.Height;
+            }
+            Image newImage = new Bitmap(newWidth, newHeight);
+            using (Graphics graphicsHandle = Graphics.FromImage(newImage))
+            {
+                graphicsHandle.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphicsHandle.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            return newImage;
         }
 
         public void Dispose()
