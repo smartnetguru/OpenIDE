@@ -54,7 +54,23 @@ namespace OpenIDE.Core
             var n = new RadTreeNode(sol.Name);
             n.Tag = sol;
 
-            n.Image = Icons[sol.ID];
+            if (Icons.ContainsKey(sol.ID))
+            {
+                n.Image = Icons[sol.ID];
+            }
+
+            return n;
+        }
+
+        public static RadTreeNode Build(Project sol)
+        {
+            var n = new RadTreeNode(sol.Name);
+            n.Tag = sol;
+
+            if (Icons.ContainsKey(sol.Type))
+            {
+                n.Image = Icons[sol.Type];
+            }
 
             return n;
         }

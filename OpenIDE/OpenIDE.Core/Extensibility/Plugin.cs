@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Xml;
 
 namespace OpenIDE.Core.Extensibility
 {
@@ -237,7 +238,12 @@ namespace OpenIDE.Core.Extensibility
                 var h = z["Highlighting/" + obj["Highlighting"].ToString()];
                 te.Highlighting = obj["Highlighting"].ToString();
 
-                HighlightingManager.Manager.AddSyntaxModeFileProvider(new StreamProvider(h.OpenReader()));
+                Highlightings.Add(te.ID.ToString(), te.Highlighting);
+
+                var hs = HighlightingDefinitionParser.Parse(new SyntaxMode(te.Highlighting, te.Name, te.Extension), 
+                    new XmlTextReader(h.OpenReader()));
+                
+                HighlightingManager.Manager.AddHighlightingStrategy(hs);
 
                 ItemTemplates.Add(te);
             }
