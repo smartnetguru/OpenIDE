@@ -1,18 +1,22 @@
 ﻿using DigitalRune.Windows.TextEditor;
 using OpenIDE.Core.Contracts;
 using OpenIDE.Core.Extensibility;
-using System.IO;
+using OpenIDE.Core.ProjectSystem;
 
 namespace OpenIDE.Core.Views
 {
     public class EditorView : View
     {
-        bool firstEdit = false;
+        bool firstEdit = true;
 
-        public EditorView(ItemTemplate p)
+        public File File { get; set; }
+
+        public EditorView(ItemTemplate p, File f)
         {
             var e = EditorBuilder.Build(p.Extension, null, null, null);
-            
+            e.Tag = this;
+            this.File = f;
+
             _view = e;
         }
 
@@ -23,16 +27,25 @@ namespace OpenIDE.Core.Views
             {
                 if (!firstEdit)
                 {
-                    if (!Window.Text.EndsWith(" (*)"))
+                    if (!Window.Text.EndsWith("(*)"))
                     {
                         Window.Text = Window.Text + " (*)";
                         Workspace.IsIdle = true;
-                        firstEdit = true;
+                        firstEdit = false;
+                    }
+                    else
+                    {
+                        // on save remove asteriks
                     }
                 }
+                else
+                {
+                    firstEdit = false;
+                }
+                
             };
 
-            e.Text = new StreamReader(new MemoryStream(raw)).ReadToEnd();
+            e.Text = new System.IO.StreamReader(new System.IO.MemoryStream(raw)).ReadToEnd();
         }
     }
 }

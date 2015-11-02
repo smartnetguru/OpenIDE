@@ -201,6 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpenIDEIcon.ico" />
+    <None Include="Resources\1446516111_Noun_Project_100Icon_10px_grid-38.png" />
     <None Include="Resources\1446383623_new10.png" />
     <None Include="Resources\1446383469_settings.ico" />
     <None Include="Resources\about_splash.png" />

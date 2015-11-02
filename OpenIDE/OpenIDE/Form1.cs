@@ -1,4 +1,5 @@
-﻿using OpenIDE.Core;
+﻿using DigitalRune.Windows.TextEditor;
+using OpenIDE.Core;
 using OpenIDE.Core.Dialogs;
 using OpenIDE.Core.Extensibility;
 using OpenIDE.Core.ProjectSystem;
@@ -113,7 +114,7 @@ namespace OpenIDE
                         npp.Events.Fire("OnCreateItem", f, raw);
 
                         var doc = new DocumentWindow(f.Name);
-                        doc.Controls.Add(ViewSelector.Select(np, raw, doc).GetView());
+                        doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
 
                         dock.AddDocument(doc);
 
@@ -255,7 +256,7 @@ namespace OpenIDE
                 np.Plugin.Events.Fire("OnCreateItem", f, np.Template.Raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi)).GetView());
+                doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi), f).GetView());
 
                 dock.AddDocument(doc);
             }
@@ -330,7 +331,7 @@ namespace OpenIDE
                 nn.Events.Fire("OnCreateItem", f, raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np, raw).GetView());
+                doc.Controls.Add(ViewSelector.Select(np, raw, f).GetView());
 
                 dock.AddDocument(doc);
             }
@@ -368,6 +369,29 @@ namespace OpenIDE
         {
             var od = new OptionsDialog();
             od.ShowDialog();
+        }
+
+        private void dock_DockWindowAdded(object sender, DockWindowEventArgs e)
+        {
+            Workspace.CurrentDocument = e.DockWindow as DocumentWindow;
+        }
+
+        private void dock_SelectedTabChanged(object sender, SelectedTabChangedEventArgs e)
+        {
+            Workspace.CurrentDocument = e.DockWindow as DocumentWindow;
+            var v = Workspace.CurrentDocument.Controls[0] as TextEditorControl;
+
+            Workspace.CurrentEditor = v;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            var edit = Workspace.CurrentDocument.Controls[0] as TextEditorControl;
+            var f = ((EditorView)edit.Tag).File;
+
+            Workspace.CurrentDocument.Text = Workspace.CurrentDocument.Text.Replace(" (*)", "");
+
+            System.IO.File.WriteAllText(f.Src, edit.Text);
         }
     }
 }

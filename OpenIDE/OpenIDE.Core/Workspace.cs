@@ -31,6 +31,8 @@ namespace OpenIDE.Core
         public static string AppDataPath { get; set; }
         public static Project SelectedProject { get; set; }
 
+        public static DocumentWindow CurrentDocument { get; set; }
+
         public static RadDock dockingManager;
 
         public static Settings Settings = new Settings();
