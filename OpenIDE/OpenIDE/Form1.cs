@@ -113,7 +113,7 @@ namespace OpenIDE
                         npp.Events.Fire("OnCreateItem", f, raw);
 
                         var doc = new DocumentWindow(f.Name);
-                        doc.Controls.Add(ViewSelector.Select(np, raw).GetView());
+                        doc.Controls.Add(ViewSelector.Select(np, raw, doc).GetView());
 
                         dock.AddDocument(doc);
 
@@ -134,6 +134,7 @@ namespace OpenIDE
             solutionExplorerWindow.Text = LanguageManager._("SolutionExplorer");
             toolboxWindow.Text = LanguageManager._("Toolbox");
             propertiesWindow.Text = LanguageManager._("Properties");
+            teamExplorerWindow.Text = LanguageManager._("Team Explorer");
 
             fileMenuItem.Text = LanguageManager._("File");
             editMenuItem.Text = LanguageManager._("Edit");
@@ -268,6 +269,10 @@ namespace OpenIDE
                 {
                     var n = e.Node.Parent;
                     Workspace.SelectedProject = n?.Tag as Project;
+
+                    var f = e.Node.Tag as Core.ProjectSystem.File;
+
+                    radPropertyGrid1.SelectedObject = f;
                 }
                 else
                 {

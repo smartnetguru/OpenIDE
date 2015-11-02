@@ -1,11 +1,14 @@
 ﻿using System.Windows.Forms;
 using System.Xaml;
+using Telerik.WinControls.UI.Docking;
 
 namespace OpenIDE.Core.Contracts
 {
     public class View
     {
         protected Control _view;
+
+        public DockWindow Window { get; set; }
 
         public byte[] Data { get; set; }
 
