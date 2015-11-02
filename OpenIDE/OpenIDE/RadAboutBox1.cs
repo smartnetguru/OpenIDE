@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenIDE.Core;
+using System;
 using System.Reflection;
 
 namespace OpenIDE
@@ -19,8 +20,18 @@ namespace OpenIDE
             this.radLabelCopyright.Text = AssemblyCopyright;
             this.radLabelCompanyName.Text = AssemblyCompany;
             this.radTextBoxDescription.Text = AssemblyDescription;
+
+            RefreshUI();
         }
 
+        void RefreshUI()
+        {
+            radLabelCompanyName.Text = LanguageManager._("Company");
+            radLabelCopyright.Text = LanguageManager._("Copyright");
+            radLabelProductName.Text = LanguageManager._("Productname");
+            radLabelVersion.Text = LanguageManager._("Version");
+            okRadButton.Text = LanguageManager._("OK");
+        }
 
         #region Assembly Attribute Accessors
 

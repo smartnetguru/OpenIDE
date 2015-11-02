@@ -172,6 +172,7 @@
             this.okRadButton.Size = new System.Drawing.Size(75, 23);
             this.okRadButton.TabIndex = 24;
             this.okRadButton.Text = "&OK";
+            this.okRadButton.ThemeName = "VisualStudio2012Dark";
             // 
             // RadAboutBox1
             // 

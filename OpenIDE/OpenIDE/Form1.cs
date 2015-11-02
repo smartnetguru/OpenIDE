@@ -35,6 +35,20 @@ namespace OpenIDE
             Workspace.Output = new Core.Contracts.Debug(outputTextBox);
             Workspace.PluginManager.Load(Environment.CurrentDirectory + "\\Plugins");
 
+            foreach (var item in Workspace.PluginManager.Plugins)
+            {
+                foreach (var win in item.Windows)
+                {
+                    var tw = new ToolWindow(win.Value.Title);
+                    var ctrl = win.Value.View.Build();
+                    ctrl.Dock = System.Windows.Forms.DockStyle.Fill;
+
+                    tw.Controls.Add(ctrl);
+
+                    dock.AddDocument(tw);
+                }
+            }
+
             // add here loading from startup
             // file, project, solution
 
@@ -129,6 +143,7 @@ namespace OpenIDE
             helpMenuItem.Text = LanguageManager._("Help");
 
             checkforUpdatesMenuItem.Text = LanguageManager._("Check for Updates");
+            aboutMenuItem.Text = LanguageManager._("About");
 
             openSolutionMenuItem.Text = LanguageManager._("Open Solution");
             exitMenuItem.Text = LanguageManager._("Exit");
@@ -179,6 +194,11 @@ namespace OpenIDE
 
                 explorerTreeView.Nodes.Clear();
                 explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+
+                var path = new FileInfo(Workspace.SolutionPath).Directory.FullName;
+
+                Directory.CreateDirectory(path + "\\" + f.Name);
+                Directory.CreateDirectory(path + "\\" + f.Name + "\\Properties");
 
                 np.Plugin.Events.Fire("OnCreateProject", f);
 

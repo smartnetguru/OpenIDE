@@ -22,6 +22,8 @@ namespace OpenIDE.Core.Dialogs
 
             okButton.Text = LanguageManager._("OK");
             cancelButton.Text = LanguageManager._("Cancel");
+
+            keyTextBox.NullText = LanguageManager._("BetaKey"); ;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

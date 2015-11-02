@@ -178,6 +178,8 @@
     <Compile Include="PropertyBag\DynamicProperty.cs" />
     <Compile Include="PropertyBag\SimpleProperty.cs" />
     <Compile Include="PropertyStorage.cs" />
+    <Compile Include="RSS\Rss.cs" />
+    <Compile Include="RSS\RssManager.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SKGL.cs" />
     <Compile Include="SolutionExplorer.cs" />

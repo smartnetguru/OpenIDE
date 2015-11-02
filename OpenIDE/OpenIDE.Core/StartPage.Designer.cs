@@ -34,8 +34,11 @@
             this.newProjectLink = new System.Windows.Forms.LinkLabel();
             this.startLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.newsLabel = new System.Windows.Forms.Label();
+            this.newsList = new Telerik.WinControls.UI.RadListControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,7 +57,7 @@
             // openProjectLink
             // 
             this.openProjectLink.AutoSize = true;
-            this.openProjectLink.Location = new System.Drawing.Point(17, 205);
+            this.openProjectLink.Location = new System.Drawing.Point(18, 205);
             this.openProjectLink.Name = "openProjectLink";
             this.openProjectLink.Size = new System.Drawing.Size(69, 13);
             this.openProjectLink.TabIndex = 2;
@@ -93,18 +96,43 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // newsLabel
+            // 
+            this.newsLabel.AutoSize = true;
+            this.newsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.newsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newsLabel.ForeColor = System.Drawing.Color.Black;
+            this.newsLabel.Location = new System.Drawing.Point(278, 20);
+            this.newsLabel.Name = "newsLabel";
+            this.newsLabel.Size = new System.Drawing.Size(58, 24);
+            this.newsLabel.TabIndex = 3;
+            this.newsLabel.Text = "News";
+            // 
+            // newsList
+            // 
+            this.newsList.Location = new System.Drawing.Point(282, 48);
+            this.newsList.Name = "newsList";
+            this.newsList.Size = new System.Drawing.Size(606, 467);
+            this.newsList.TabIndex = 4;
+            this.newsList.Text = "radListControl1";
+            this.newsList.ThemeName = "ControlDefault";
+            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.newsList);
+            this.Controls.Add(this.newsLabel);
             this.Controls.Add(this.panel1);
             this.Name = "StartPage";
             this.Size = new System.Drawing.Size(891, 531);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsList)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,5 +143,7 @@
         private System.Windows.Forms.LinkLabel newProjectLink;
         private System.Windows.Forms.Label startLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label newsLabel;
+        private Telerik.WinControls.UI.RadListControl newsList;
     }
 }
