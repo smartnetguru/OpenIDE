@@ -97,6 +97,7 @@
     <Compile Include="Extensibility\Library.cs" />
     <Compile Include="Extensibility\Plugin.cs" />
     <Compile Include="Extensibility\ProjectTemplate.cs" />
+    <Compile Include="Extensibility\StreamProvider.cs" />
     <Compile Include="FilterBuilder\FilterBuilder.cs" />
     <Compile Include="FilterBuilder\FilterGroup.cs" />
     <Compile Include="FilterBuilder\Helpers.cs" />

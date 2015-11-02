@@ -242,8 +242,9 @@ namespace OpenIDE.Core.Extensibility
 
                 var hs = HighlightingDefinitionParser.Parse(new SyntaxMode(te.Highlighting, te.Name, te.Extension), 
                     new XmlTextReader(h.OpenReader()));
-                
+
                 HighlightingManager.Manager.AddHighlightingStrategy(hs);
+                hs.ResolveReferences();
 
                 ItemTemplates.Add(te);
             }
