@@ -13,6 +13,7 @@ namespace OpenIDE.Core.Extensibility
         public Guid ProjectID { get; set; }
         public string Extension { get; set; }
         public View View { get; internal set; }
+        public string ViewSource { get; internal set; }
         public byte[] Raw { get; set; }
 
         public ItemTemplate()

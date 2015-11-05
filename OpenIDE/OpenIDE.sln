@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Std", "Std", "{24B35A54-BB4
 		Lambda.js = Lambda.js
 		Library\Std\List.ts = Library\Std\List.ts
 		Library\Std\Module.ts = Library\Std\Module.ts
+		query.js = query.js
 		Library\Std\Range.ts = Library\Std\Range.ts
 		Library\Std\StringBuilder.ts = Library\Std\StringBuilder.ts
 		Library\Std\Tuple.ts = Library\Std\Tuple.ts

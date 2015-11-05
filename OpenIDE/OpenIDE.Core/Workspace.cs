@@ -2,6 +2,7 @@
 using OpenIDE.Core.Contracts;
 using OpenIDE.Core.ProjectSystem;
 using System;
+using System.Runtime.Caching;
 using Telerik.WinControls.UI.Docking;
 
 namespace OpenIDE.Core
@@ -39,12 +40,21 @@ namespace OpenIDE.Core
 
         public static Debug Output { get; set; }
 
+        public static MemoryCache Cache { get; set; }
+
+        public static void AddToCache(string key, object value, DateTimeOffset duration)
+        {
+            Cache.Add(new CacheItem(key, value), new CacheItemPolicy() { AbsoluteExpiration = duration });
+        }
+
         static Workspace()
         {
             Solution = new Solution();
 
             AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\OpenIDE\";
             SolutionPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            Cache = MemoryCache.Default;
         }
     }
 }

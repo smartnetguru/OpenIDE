@@ -233,6 +233,7 @@ namespace OpenIDE.Core.Extensibility
                 if(obj.ContainsKey("View"))
                 {
                     te.View = View.FromXaml(new StreamReader(z["Views/" + obj["View"]].OpenReader()).ReadToEnd());
+                    te.ViewSource = new StreamReader(z["Sources/" + obj["View"].ToString().Replace("xaml", "js")].OpenReader()).ReadToEnd();
                 }
 
                 var h = z["Highlighting/" + obj["Highlighting"].ToString()];
@@ -242,7 +243,7 @@ namespace OpenIDE.Core.Extensibility
 
                 var hs = HighlightingDefinitionParser.Parse(new SyntaxMode(te.Highlighting, te.Name, te.Extension), 
                     new XmlTextReader(h.OpenReader()));
-
+                
                 HighlightingManager.Manager.AddHighlightingStrategy(hs);
                 hs.ResolveReferences();
 
