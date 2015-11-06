@@ -21,7 +21,6 @@ namespace OpenIDE.Core.Extensibility
         public List<ItemTemplate> ItemTemplates { get; set; }
         public List<ProjectTemplate> ProjectTemplates { get; set; }
         public IDictionary<string, object> Info { get; set; }
-        private Dictionary<string, string> Highlightings;
         public PropertyStorage Properties = new PropertyStorage();
         public List<Library> Dependencies { get; set; }
         public WindowCollection Windows { get; set; }
@@ -40,7 +39,6 @@ namespace OpenIDE.Core.Extensibility
             ItemTemplates = new List<ItemTemplate>();
             ProjectTemplates = new List<ProjectTemplate>();
 
-            Highlightings = new Dictionary<string, string>();
             Dependencies = new List<Library>();
 
             Events = new EventStorage();
@@ -67,12 +65,12 @@ namespace OpenIDE.Core.Extensibility
 
                 return null;
             }));
-            _engine.Add("require", new Action<string>(_ =>
+            /*_engine.Add("require", new Action<string>(_ =>
             {
                 var i = new StreamReader(z[_].OpenReader());
 
                 _engine.Execute(i.ReadToEnd());
-            }));
+            }));*/
             _engine.Add("import", new Action<string>(_ =>
             {
                 var l = Library.Load(_);
@@ -239,8 +237,6 @@ namespace OpenIDE.Core.Extensibility
                 var h = z["Highlighting/" + obj["Highlighting"].ToString()];
                 te.Highlighting = obj["Highlighting"].ToString();
 
-                Highlightings.Add(te.ID.ToString(), te.Highlighting);
-
                 var hs = HighlightingDefinitionParser.Parse(new SyntaxMode(te.Highlighting, te.Name, te.Extension), 
                     new XmlTextReader(h.OpenReader()));
                 
@@ -284,7 +280,6 @@ namespace OpenIDE.Core.Extensibility
         {
             Dependencies = null;
             Filename = null;
-            Highlightings = null;
             Icons = null;
             Info = null;
             ItemTemplates = null;

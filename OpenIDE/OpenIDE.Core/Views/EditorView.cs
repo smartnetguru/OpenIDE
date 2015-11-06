@@ -42,7 +42,6 @@ namespace OpenIDE.Core.Views
                 {
                     firstEdit = false;
                 }
-                
             };
 
             e.Text = new System.IO.StreamReader(new System.IO.MemoryStream(raw)).ReadToEnd();

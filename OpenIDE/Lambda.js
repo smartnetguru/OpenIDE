@@ -75,3 +75,5 @@
 
     return lambda;
 });
+
+$["lambda"] = lambda;

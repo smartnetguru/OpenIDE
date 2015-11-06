@@ -19,7 +19,7 @@ namespace OpenIDE
         {
             InitializeComponent();
 
-            startpageDocument.Controls.Add(new StartPage() { Dock = System.Windows.Forms.DockStyle.Fill });
+            startpageDocument.Controls.Add(new StartPage(openMenuItem_Click, newProjectMenuItem_Click) { Dock = System.Windows.Forms.DockStyle.Fill });
 
             NotificationService.Init(radDesktopAlert1);
 
@@ -59,68 +59,74 @@ namespace OpenIDE
                 string file = null;
 
 #if DEBUG
-                file = args[1];
+                if (args.Length > 1)
+                {
+                    file = args[1];
+                }
 #else
                 file = args[0];
 #endif
 
-                switch (Path.GetExtension(file))
+                if (file != null)
                 {
-                    case ".sln":
-                        Workspace.Solution = Solution.Load(file);
-                        Workspace.SolutionPath = file;
+                    switch (Path.GetExtension(file))
+                    {
+                        case ".sln":
+                            Workspace.Solution = Solution.Load(file);
+                            Workspace.SolutionPath = file;
 
-                        startpageDocument.Hide();
-                        solutionExplorerWindow.Show();
+                            startpageDocument.Hide();
+                            solutionExplorerWindow.Show();
 
-                        newProjectMenuItem.Enabled = true;
-                        newFileMenuItem.Enabled = true;
+                            newProjectMenuItem.Enabled = true;
+                            newFileMenuItem.Enabled = true;
 
-                        explorerTreeView.Nodes.Clear();
-                        explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                            explorerTreeView.Nodes.Clear();
+                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
 
-                        break;
-                    case "proj":
+                            break;
+                        case "proj":
 
-                        break;
-                    default:
-                        var f = new Core.ProjectSystem.File();
-                        var shortF = Path.GetFileName(file);
+                            break;
+                        default:
+                            var f = new Core.ProjectSystem.File();
+                            var shortF = Path.GetFileName(file);
 
-                        f.Name = shortF;
-                        f.Src = file;
-                        f.ID = Utils.GetTemplateID(shortF);
+                            f.Name = shortF;
+                            f.Src = file;
+                            f.ID = Utils.GetTemplateID(shortF);
 
-                        explorerTreeView.Nodes.Clear();
-                        explorerTreeView.Nodes.Add(SolutionExplorer.Build(f));
+                            explorerTreeView.Nodes.Clear();
+                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(f));
 
-                        ItemTemplate np = null;
-                        Plugin npp = null;
+                            ItemTemplate np = null;
+                            Plugin npp = null;
 
-                        foreach (var item in Workspace.PluginManager.Plugins)
-                        {
-                            foreach (var it in item.ItemTemplates)
+                            foreach (var item in Workspace.PluginManager.Plugins)
                             {
-                                if(it.ID == f.ID)
+                                foreach (var it in item.ItemTemplates)
                                 {
-                                    np = it;
-                                    npp = item;
+                                    if (it.ID == f.ID)
+                                    {
+                                        np = it;
+                                        npp = item;
+                                    }
                                 }
                             }
-                        }
 
-                        var raw = System.IO.File.ReadAllBytes(file);
+                            var raw = System.IO.File.ReadAllBytes(file);
 
-                        npp.Events.Fire("OnCreateItem", f, raw);
+                            npp.Events.Fire("OnCreateItem", f, raw);
 
-                        var doc = new DocumentWindow(f.Name);
-                        doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
+                            var doc = new DocumentWindow(f.Name);
+                            doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
 
-                        dock.AddDocument(doc);
+                            dock.AddDocument(doc);
 
-                        startpageDocument.Hide();
+                            startpageDocument.Hide();
 
-                        break;
+                            break;
+                    }
                 }
             }
 
@@ -183,7 +189,7 @@ namespace OpenIDE
             }
         }
 
-        private void radMenuItem12_Click(object sender, EventArgs e)
+        private void newProjectMenuItem_Click(object sender, EventArgs e)
         {
             var np = new NewProjectDialog();
             if (np.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -208,7 +214,7 @@ namespace OpenIDE
             }
         }
 
-        private void radMenuItem9_Click(object sender, EventArgs e)
+        private void openMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Solution (*.sln)|*.sln";
 
@@ -331,7 +337,7 @@ namespace OpenIDE
                 nn.Events.Fire("OnCreateItem", f, raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np, raw, f).GetView());
+                doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
 
                 dock.AddDocument(doc);
             }

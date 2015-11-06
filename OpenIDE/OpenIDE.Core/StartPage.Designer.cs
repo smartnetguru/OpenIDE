@@ -63,6 +63,7 @@
             this.openProjectLink.TabIndex = 2;
             this.openProjectLink.TabStop = true;
             this.openProjectLink.Text = "Open Project";
+            this.openProjectLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.openProjectLink_LinkClicked);
             // 
             // newProjectLink
             // 
@@ -73,6 +74,7 @@
             this.newProjectLink.TabIndex = 1;
             this.newProjectLink.TabStop = true;
             this.newProjectLink.Text = "New Project";
+            this.newProjectLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newProjectLink_LinkClicked);
             // 
             // startLabel
             // 
@@ -110,12 +112,12 @@
             // 
             // newsList
             // 
+            this.newsList.EnableTheming = false;
             this.newsList.Location = new System.Drawing.Point(282, 48);
             this.newsList.Name = "newsList";
             this.newsList.Size = new System.Drawing.Size(606, 467);
             this.newsList.TabIndex = 4;
             this.newsList.Text = "radListControl1";
-            this.newsList.ThemeName = "ControlDefault";
             // 
             // StartPage
             // 

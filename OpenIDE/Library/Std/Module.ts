@@ -247,5 +247,5 @@
     return create();
 }));
 
-var require = modulejs.require;
 var define = modulejs.define;
+var require = modulejs.require;

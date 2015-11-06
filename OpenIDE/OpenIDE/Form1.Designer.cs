@@ -193,7 +193,7 @@
             this.newProjectMenuItem.Enabled = false;
             this.newProjectMenuItem.Name = "newProjectMenuItem";
             this.newProjectMenuItem.Text = "Project";
-            this.newProjectMenuItem.Click += new System.EventHandler(this.radMenuItem12_Click);
+            this.newProjectMenuItem.Click += new System.EventHandler(this.openMenuItem_Click);
             // 
             // newFileMenuItem
             // 
@@ -210,7 +210,7 @@
             this.openSolutionMenuItem.AccessibleName = "Open";
             this.openSolutionMenuItem.Name = "openSolutionMenuItem";
             this.openSolutionMenuItem.Text = "Open";
-            this.openSolutionMenuItem.Click += new System.EventHandler(this.radMenuItem9_Click);
+            this.openSolutionMenuItem.Click += new System.EventHandler(this.openMenuItem_Click);
             // 
             // radMenuSeparatorItem1
             // 
