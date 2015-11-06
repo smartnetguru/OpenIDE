@@ -249,3 +249,5 @@
 
 var define = modulejs.define;
 var require = modulejs.require;
+
+define.amd = true;
