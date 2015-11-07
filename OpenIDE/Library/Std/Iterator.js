@@ -1,5 +1,4 @@
-var System;
-(function (System) {
+define("Iterator", [], function () {
     var Iterator = (function () {
         function Iterator(items) {
             this.index = 0;
@@ -28,5 +27,6 @@ var System;
         };
         return Iterator;
     })();
-    System.Iterator = Iterator;
-})(System || (System = {}));
+
+    return Iterator;
+});

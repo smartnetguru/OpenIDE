@@ -100,7 +100,14 @@ namespace OpenIDE.Core
         {
             get
             {
-                return (Parameters[Param]);
+                if (Parameters.ContainsKey(Param))
+                {
+                    return (Parameters[Param]);
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
     }

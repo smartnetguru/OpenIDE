@@ -15,23 +15,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{69AD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Std", "Std", "{24B35A54-BB40-47B8-BDB1-CA65E15D2EA3}"
 	ProjectSection(SolutionItems) = preProject
-		Library\Std\Base64.ts = Library\Std\Base64.ts
+		Library\Std\Base64.js = Library\Std\Base64.js
 		Library\Std\Class.js = Library\Std\Class.js
-		Library\Std\Dictionary.ts = Library\Std\Dictionary.ts
+		Library\Std\Dictionary.js = Library\Std\Dictionary.js
 		Library\Std\Enum.ts = Library\Std\Enum.ts
-		Event.js = Event.js
+		Library\Std\Event.ts = Library\Std\Event.ts
 		Library\Std\Exceptions.ts = Library\Std\Exceptions.ts
-		Library\Std\Iterator.ts = Library\Std\Iterator.ts
-		Lambda.js = Lambda.js
-		Library\Std\List.ts = Library\Std\List.ts
+		Library\Std\getClass.js = Library\Std\getClass.js
+		Library\Std\Iterator.js = Library\Std\Iterator.js
+		Library\Std\JSON.js = Library\Std\JSON.js
+		Library\Std\Lambda.js = Library\Std\Lambda.js
+		Library\Std\Linq.js = Library\Std\Linq.js
+		Library\Std\List.js = Library\Std\List.js
 		Library\Std\Module.js = Library\Std\Module.js
-		query.js = query.js
+		Library\Std\Promise.js = Library\Std\Promise.js
 		Library\Std\Range.ts = Library\Std\Range.ts
-		Library\Std\StringBuilder.ts = Library\Std\StringBuilder.ts
+		Library\Std\StringBuilder.js = Library\Std\StringBuilder.js
 		Library\Std\Tuple.ts = Library\Std\Tuple.ts
 		Library\Std\Types.ts = Library\Std\Types.ts
 		Library\Std\Uri.js = Library\Std\Uri.js
 		Library\Std\Utilities.js = Library\Std\Utilities.js
+		Library\Std\VariableChangedListener.js = Library\Std\VariableChangedListener.js
+		Library\Std\VerbalExpressions.js = Library\Std\VerbalExpressions.js
+		Library\Std\XmlDocument.js = Library\Std\XmlDocument.js
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Library", "OpenIDE.Library\OpenIDE.Library.csproj", "{8048D1BD-C332-4B60-A114-DA04CF131698}"

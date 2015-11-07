@@ -25,7 +25,6 @@ namespace OpenIDE.Core.Extensibility
         public List<Library> Dependencies { get; set; }
         public WindowCollection Windows { get; set; }
 
-        public string Language { get; set; }
         public string Filename { get; set; }
         public EventStorage Events { get; set; }
 
@@ -74,7 +73,7 @@ namespace OpenIDE.Core.Extensibility
             _engine.Add("import", new Action<string>(_ =>
             {
                 var l = Library.Load(_);
-                l.Apply(_engine, Language);
+                l.Apply(_engine);
 
                 Dependencies.Add(l);
             }));
@@ -133,7 +132,7 @@ namespace OpenIDE.Core.Extensibility
 
                     p.Icons.Add(n, img);
                 }
-                if(part.FileName == "Sources/properties.js")
+                if (part.FileName == "Sources/properties.js")
                 {
                     var src = new StreamReader(z["Sources/properties.js"].OpenReader()).ReadToEnd();
                     props = src;
@@ -149,27 +148,7 @@ namespace OpenIDE.Core.Extensibility
 
             p.ReadItemtemplates(z);
 
-            if (p.Info.ContainsKey("Language"))
-            {
-                p.Language = p.Info["Language"].ToString();
-
-                switch (p.Info["Language"].ToString())
-                {
-                    case "JavaScript":
-                        p._engine = new JScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging);
-                        
-                        break;
-                    case "VBScript":
-                        p._engine = new VBScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging);
-
-                        break;
-                }
-            }
-            else
-            {
-                p._engine = new JScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging);
-                p.Language = "JavaScript";
-            }
+            p._engine = new JScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging | WindowsScriptEngineFlags.EnableDebugging);
 
             p.InitEngine(z);
             p.ReadDependencies();
@@ -189,7 +168,7 @@ namespace OpenIDE.Core.Extensibility
                 {
                     var l = Library.Load(item.ToString());
                     
-                    l?.Apply(_engine, Language);
+                    l?.Apply(_engine);
 
                     Dependencies.Add(l);
                 }
@@ -283,7 +262,6 @@ namespace OpenIDE.Core.Extensibility
             Icons = null;
             Info = null;
             ItemTemplates = null;
-            Language = null;
             ProjectTemplates = null;
             Properties = null;
             _engine = null;

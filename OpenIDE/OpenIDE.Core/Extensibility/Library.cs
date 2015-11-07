@@ -34,25 +34,15 @@ namespace OpenIDE.Core.Extensibility
             return null;
         }
 
-        public void Apply(WindowsScriptEngine wse, string Language)
+        public void Apply(WindowsScriptEngine wse)
         {
             foreach (var item in Sources)
             {
                 var src = new StreamReader(item.Value);
 
-                if(Language == "JavaScript")
+                if (item.Key.EndsWith(".js"))
                 {
-                    if(item.Key.EndsWith(".js"))
-                    {
-                        wse.Execute(src.ReadToEnd());
-                    }
-                }
-                else
-                {
-                    if (item.Key.EndsWith(".vbs"))
-                    {
-                        wse.Execute(src.ReadToEnd());
-                    }
+                    wse.Execute(src.ReadToEnd());
                 }
             }
         }
