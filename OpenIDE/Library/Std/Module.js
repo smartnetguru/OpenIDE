@@ -162,9 +162,15 @@
 
         // Returns an instance for `id`. If a `mocks` object is given, it is
         // used to resolve the dependencies.
-        function require(id, mocks) {
+        function require(id, callback) {
+            if (callback && callback instanceof Function) {
+                var obj = resolve(id);
+                callback(obj)
 
-            return resolve(id, mocks);
+                return obj;
+            }
+
+            return resolve(id, callback);
         }
 
         // Returns an object that holds infos about the current definitions
