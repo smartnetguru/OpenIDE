@@ -26,7 +26,7 @@ namespace PluginCompiler
                         break;
                 }
 
-                z.Save(Environment.CurrentDirectory + "\\" + a["output"]);
+                z.Save(a["sources"] + "\\" + a["output"]);
             }
 
             Console.WriteLine("Done");
@@ -34,7 +34,8 @@ namespace PluginCompiler
 
         private static void compilePlugin(Arguments a, ZipFile z)
         {
-            
+            // -path="C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\Library\Std" -output="Test.plugin"
+            // -info="info.json" -main="main.js"
         }
 
         private static void compileLibrary(Arguments a, ZipFile z)
