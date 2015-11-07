@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RadDock Padding="0, 0, 0, 0" SplitterWidth="2" IsCleanUpTarget="True" Orientation="Horizontal" Text="radDock1" CausesValidation="False" TabIndex="2" TabStop="False">
+  <SerializableAutoHideContainer>
+    <LeftAutoHideGroups>
+      <Telerik.WinControls.UI.Docking.AutoHideGroup>
+        <Windows>
+          <Telerik.WinControls.UI.Docking.DockWindowPlaceholder AutoHideSize="200, 200" DockWindowName="toolboxWindow" DockWindowText="Toolbox" PreviousDockState="Docked" Location="0, 0" Font="Microsoft Sans Serif, 8.25pt" />
+        </Windows>
+      </Telerik.WinControls.UI.Docking.AutoHideGroup>
+    </LeftAutoHideGroups>
+    <BottomAutoHideGroups>
+      <Telerik.WinControls.UI.Docking.AutoHideGroup>
+        <Windows>
+          <Telerik.WinControls.UI.Docking.DockWindowPlaceholder AutoHideSize="200, 200" DockWindowName="outputWindow" DockWindowText="Output" PreviousDockState="Docked" Location="0, 0" Font="Microsoft Sans Serif, 8.25pt" />
+          <Telerik.WinControls.UI.Docking.DockWindowPlaceholder AutoHideSize="200, 200" DockWindowName="errorsWindow" DockWindowText="Errors" PreviousDockState="Docked" Location="0, 0" Font="Microsoft Sans Serif, 8.25pt" />
+        </Windows>
+      </Telerik.WinControls.UI.Docking.AutoHideGroup>
+    </BottomAutoHideGroups>
+  </SerializableAutoHideContainer>
+  <Controls>
+    <Telerik.WinControls.UI.RadSplitContainer IsCleanUpTarget="True" Orientation="Vertical" SplitterWidth="2" Padding="5, 5, 5, 5" CausesValidation="False" Location="26, 0" Name="radSplitContainer4" Size="863, 364" TabIndex="0" TabStop="False">
+      <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+      <Controls>
+        <Telerik.WinControls.UI.Docking.ToolTabStrip CanUpdateChildIndex="True" Size="200, 162" Location="0, 0" CausesValidation="False" Name="toolTabStrip6" TabIndex="6" TabStop="False">
+          <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+          <Controls>
+            <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Docked" Name="toolboxWindow" Size="272, 253" Location="4, 4" Font="Microsoft Sans Serif, 8.25pt" Text="Toolbox" />
+          </Controls>
+        </Telerik.WinControls.UI.Docking.ToolTabStrip>
+        <Telerik.WinControls.UI.Docking.DocumentContainer IsMainDocumentContainer="True" SplitterWidth="2" TabIndex="3" Orientation="Vertical" CausesValidation="False" Name="documentContainer1">
+          <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" SizeMode="Fill" />
+          <Controls>
+            <Telerik.WinControls.UI.Docking.DocumentTabStrip SelectedIndex="0" CanUpdateChildIndex="True" Size="661, 364" Location="0, 0" CausesValidation="False" Name="documentTabStrip1" TabIndex="0" TabStop="False">
+              <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+              <Controls>
+                <Telerik.WinControls.UI.Docking.DocumentWindow PreviousDockState="TabbedDocument" Name="startpageDocument" Size="649, 329" Location="6, 29" Font="Microsoft Sans Serif, 8.25pt" Text="Startpage" />
+              </Controls>
+            </Telerik.WinControls.UI.Docking.DocumentTabStrip>
+          </Controls>
+        </Telerik.WinControls.UI.Docking.DocumentContainer>
+        <Telerik.WinControls.UI.RadSplitContainer IsCleanUpTarget="True" Orientation="Horizontal" SplitterWidth="2" Padding="5, 5, 5, 5" CausesValidation="False" Location="663, 0" Name="radSplitContainer5" Size="200, 364" TabIndex="5" TabStop="False">
+          <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+          <Controls>
+            <Telerik.WinControls.UI.Docking.ToolTabStrip SelectedIndex="0" CanUpdateChildIndex="True" Size="200, 181" Location="0, 0" CausesValidation="False" Name="toolTabStrip7" TabIndex="6" TabStop="False">
+              <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+              <Controls>
+                <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Hidden" Name="solutionExplorerWindow" Size="198, 131" Location="1, 24" Font="Microsoft Sans Serif, 8.25pt" Text="Solution Explorer" />
+                <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Docked" Name="teamExplorerWindow" Size="192, 63" Location="4, 24" Font="Microsoft Sans Serif, 8.25pt" Text="Team Explorer" />
+              </Controls>
+            </Telerik.WinControls.UI.Docking.ToolTabStrip>
+            <Telerik.WinControls.UI.Docking.ToolTabStrip SelectedIndex="0" CanUpdateChildIndex="True" Size="200, 181" Location="0, 183" Name="toolTabStrip8" TabIndex="5" TabStop="False">
+              <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+              <Controls>
+                <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Docked" Name="propertiesWindow" Size="198, 155" Location="1, 24" Font="Microsoft Sans Serif, 8.25pt" Text="Properties" />
+              </Controls>
+            </Telerik.WinControls.UI.Docking.ToolTabStrip>
+          </Controls>
+        </Telerik.WinControls.UI.RadSplitContainer>
+      </Controls>
+    </Telerik.WinControls.UI.RadSplitContainer>
+    <Telerik.WinControls.UI.Docking.ToolTabStrip CanUpdateChildIndex="True" Size="863, 200" Location="26, 164" CausesValidation="False" Name="toolTabStrip9" TabIndex="2" TabStop="False">
+      <SizeInfo SplitterCorrection="0, 0" AutoSizeScale="0, 0" />
+      <Controls>
+        <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Docked" Name="outputWindow" Size="653, 147" Location="4, 24" Font="Microsoft Sans Serif, 8.25pt" Text="Output" />
+        <Telerik.WinControls.UI.Docking.ToolWindow Caption="" PreviousDockState="Docked" Name="errorsWindow" Size="861, 174" Location="1, 24" Font="Microsoft Sans Serif, 8.25pt" Text="Errors" />
+      </Controls>
+    </Telerik.WinControls.UI.Docking.ToolTabStrip>
+  </Controls>
+</RadDock>

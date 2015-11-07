@@ -1,0 +1,22 @@
+{
+  "Name": "JavaScript",
+  "ID": "17764EC8-8379-437E-BCD6-97660F1656FB",
+  "Templates": {
+    "Item": [
+      {
+        "ID": "9080C370-EFAD-49B1-8604-520CE90E2C32",
+        "Name": "JavaScript",
+        "Template": "Template.js",
+        "Icon": "js.png",
+        "Highlighting": "JavaScript.xshd",
+        "Extension": ".js"
+      }
+    ],
+    "Project": [
+
+    ]
+  },
+  "Dependencies": [
+    "Std.Collections.lib"
+  ]
+}

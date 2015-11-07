@@ -19,14 +19,18 @@ namespace PluginCompiler
                     case "plugin":
                         compilePlugin(a, z);
 
+                        z.Save(new DirectoryInfo(a["path"]).Parent.FullName + "\\" + a["output"]);
+
                         break;
                     case "library":
                         compileLibrary(a, z);
 
+                        z.Save(a["sources"] + "\\" + a["output"]);
+
                         break;
                 }
 
-                z.Save(a["sources"] + "\\" + a["output"]);
+                
             }
 
             Console.WriteLine("Done");
@@ -34,8 +38,7 @@ namespace PluginCompiler
 
         private static void compilePlugin(Arguments a, ZipFile z)
         {
-            // -path="C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\Library\Std" -output="Test.plugin"
-            // -info="info.json" -main="main.js"
+            z.AddDirectory(a["path"], "/");
         }
 
         private static void compileLibrary(Arguments a, ZipFile z)
@@ -48,7 +51,7 @@ namespace PluginCompiler
 
                 foreach (var item in files)
                 {
-                    z.AddFile(item, "/");
+                    z.AddFile(item, "");
                 }
             }
         }

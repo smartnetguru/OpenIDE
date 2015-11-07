@@ -1,0 +1,5 @@
+<UserControl xmlns="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms">
+  <UserControl.Controls>
+    <Button Location="0, 0" Name="helloBtn" TabIndex="0" Text="Click ME" />
+  </UserControl.Controls>
+</UserControl>
