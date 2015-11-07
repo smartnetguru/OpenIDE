@@ -10,9 +10,8 @@ namespace PluginCompiler
         static void Main(string[] args)
         {
             var a = new Arguments(args);
-            using (var z = new ZipFile(a["output"]))
+            using (var z = new ZipFile())
             {
-
                 Console.WriteLine("Compiling... ");
 
                 switch (a["target"])
@@ -26,6 +25,8 @@ namespace PluginCompiler
 
                         break;
                 }
+
+                z.Save(Environment.CurrentDirectory + "\\" + a["output"]);
             }
 
             Console.WriteLine("Done");
@@ -44,7 +45,10 @@ namespace PluginCompiler
             {
                 var files = Directory.GetFiles(src);
 
-                z.AddFile(src);
+                foreach (var item in files)
+                {
+                    z.AddFile(item, "/");
+                }
             }
         }
     }
