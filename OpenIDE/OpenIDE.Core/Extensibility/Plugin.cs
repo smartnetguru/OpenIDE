@@ -4,8 +4,8 @@ using Ionic.Zip;
 using Microsoft.ClearScript;
 using Microsoft.ClearScript.Windows;
 using OpenIDE.Core.Contracts;
-using OpenIDE.Core.Extensibility.ScriptedProviders;
 using OpenIDE.Core.JSON;
+using OpenIDE.Core.Properties;
 using OpenIDE.Library;
 using System;
 using System.Collections.Generic;
@@ -48,6 +48,8 @@ namespace OpenIDE.Core.Extensibility
 
         private void InitEngine(ZipFile z)
         {
+            _engine.Execute(Resources.Module);
+
             _engine.Add("host", new ExtendedHostFunctions());
 
             // add function to script engine to control the properties
