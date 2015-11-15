@@ -186,11 +186,11 @@ namespace OpenIDE.Core.Extensibility
                 var obj = (tt as ObjectValue).Value;
                 var te = new ItemTemplate();
 
-                te.ProjectID = Guid.Parse(Info["ID"].ToString());
+                te.ProjectID = Guid.Parse(JsonExtensionResolver.Resolve<string>(Info["ID"].ToString()));
 
                 te.Name = obj["Name"].ToString();
                 te.Extension = obj["Extension"].ToString();
-                te.ID = Guid.Parse(obj["ID"].ToString());
+                te.ID = Guid.Parse(JsonExtensionResolver.Resolve<string>(obj["ID"].ToString()));
 
                 var ms = new MemoryStream();
                 z["Templates/Items/" + obj["Template"]].OpenReader().CopyTo(ms);

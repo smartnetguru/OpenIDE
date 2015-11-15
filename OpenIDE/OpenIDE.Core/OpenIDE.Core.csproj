@@ -115,6 +115,8 @@
     <Compile Include="IntellisensDefinition\ItemCollection.cs" />
     <Compile Include="IntellisensDefinition\Method.cs" />
     <Compile Include="IntellisensDefinition\Object.cs" />
+    <Compile Include="JsonExtensionResolver.cs" />
+    <Compile Include="JsonExtensions\GuidExtension.cs" />
     <Compile Include="JSON\ArrayValue.cs" />
     <Compile Include="JSON\Framework\CharParsers.cs" />
     <Compile Include="JSON\Framework\JsonParserFromString.cs" />
