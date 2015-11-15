@@ -385,15 +385,15 @@ namespace OpenIDE
         private void dock_SelectedTabChanged(object sender, SelectedTabChangedEventArgs e)
         {
             Workspace.CurrentDocument = e.DockWindow as DocumentWindow;
-            var v = Workspace.CurrentDocument.Controls[0] as TextEditorControl;
+            var v = Workspace.CurrentDocument?.Controls[0] as TextEditorControl;
 
             Workspace.CurrentEditor = v;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            var edit = Workspace.CurrentDocument.Controls[0] as TextEditorControl;
-            var f = ((EditorView)edit.Tag).File;
+            var edit = Workspace.CurrentDocument?.Controls[0] as TextEditorControl;
+            var f = ((EditorView)edit.Tag)?.File;
 
             Workspace.CurrentDocument.Text = Workspace.CurrentDocument.Text.Replace(" (*)", "");
 

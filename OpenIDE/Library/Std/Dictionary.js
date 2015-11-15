@@ -1,4 +1,4 @@
-define("Dictionary", [], function () {
+define("Dictionary", function () {
     var Dictionary = (function () {
         function Dictionary(data) {
             if (data) {

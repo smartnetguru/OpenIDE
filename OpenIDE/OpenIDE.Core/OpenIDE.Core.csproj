@@ -98,12 +98,14 @@
     <Compile Include="Extensibility\Library.cs" />
     <Compile Include="Extensibility\Plugin.cs" />
     <Compile Include="Extensibility\ProjectTemplate.cs" />
+    <Compile Include="Extensibility\ScriptedProviders\ScriptedCompletionProvider.cs" />
     <Compile Include="FilterBuilder\FilterBuilder.cs" />
     <Compile Include="FilterBuilder\FilterGroup.cs" />
     <Compile Include="FilterBuilder\Helpers.cs" />
     <Compile Include="FilterBuilder\SystemFileType.cs" />
     <Compile Include="Function.cs" />
     <Compile Include="FunctionCollection.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="IntellisensDefinition\Argument.cs" />
     <Compile Include="IntellisensDefinition\Definition.cs" />
     <Compile Include="IntellisensDefinition\DefinitionReader.cs" />
@@ -194,7 +196,6 @@
     <Compile Include="ViewSelector.cs" />
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\PropertiesView.cs" />
-    <Compile Include="Views\SplittedView.cs" />
     <Compile Include="WindowCollection.cs" />
     <Compile Include="Workspace.cs" />
   </ItemGroup>

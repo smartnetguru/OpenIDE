@@ -12,7 +12,6 @@ namespace OpenIDE.Core
         {
             if(it.View != null)
             {
-                it.View.Data = data;
                 it.View.Window = window;
 
                 it.View.Create(data);
@@ -22,7 +21,6 @@ namespace OpenIDE.Core
             else
             {
                 var v = new EditorView(it, file);
-                v.Data = data;
                 v.Window = window;
 
                 v.Create(data);

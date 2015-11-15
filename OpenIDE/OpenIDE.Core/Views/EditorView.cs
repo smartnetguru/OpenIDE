@@ -14,8 +14,16 @@ namespace OpenIDE.Core.Views
         public EditorView(ItemTemplate p, File f)
         {
             var e = EditorBuilder.Build(p.Extension, null, null, null);
+            e.CompletionRequest += (s, ee) =>
+            {
+                if (p.AutoCompletionProvider != null)
+                {
+                    //e.ShowCompletionWindow(p.AutoCompletionProvider, ee.Key, true);
+                }
+            };
+
             e.Tag = this;
-            this.File = f;
+            File = f;
 
             _view = e;
         }

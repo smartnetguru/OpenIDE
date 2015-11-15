@@ -1,44 +1,31 @@
-define("Event", [], function () {
-    var Event = (function () {
-        function Event() {
-            this._listeners = {};
+define("Event", function () {
+    function Event() {
+        this._list = [];
+    }
+
+    // this method will handle adding observers to the internal list
+    Event.prototype.observe = function (obj) {
+        console.log('added new observer');
+        this._list.push(obj);
+    };
+
+    Event.prototype.unobserve = function (obj) {
+        for (var i = 0, len = this._list.length; i < len; i++) {
+            if (this._list[i] === obj) {
+                this._list.splice(i, 1);
+                console.log('removed existing observer');
+                return true;
+            }
         }
-        Event.prototype.addListener = function (type, listener) {
-            if (typeof this._listeners[type] == "undefined") {
-                this._listeners[type] = [];
-            }
-            this._listeners[type].push(listener);
-        };
-        Event.prototype.fire = function (event) {
-            if (typeof event == "string") {
-                event = { type: event };
-            }
-            if (!event.target) {
-                event.target = this;
-            }
-            if (!event.type) {
-                throw new Error("Event object missing 'type' property.");
-            }
-            if (this._listeners[event.type] instanceof Array) {
-                var listeners = this._listeners[event.type];
-                for (var i = 0, len = listeners.length; i < len; i++) {
-                    listeners[i].call(this, event);
-                }
-            }
-        };
-        Event.prototype.removeListener = function (type, listener) {
-            if (this._listeners[type] instanceof Array) {
-                var listeners = this._listeners[type];
-                for (var i = 0, len = listeners.length; i < len; i++) {
-                    if (listeners[i] === listener) {
-                        listeners.splice(i, 1);
-                        break;
-                    }
-                }
-            }
-        };
-        return Event;
-    })();
+        return false;
+    };
+
+    Event.prototype.notify = function () {
+        var args = Array.prototype.slice.call(arguments, 0);
+        for (var i = 0, len = this._list.length; i < len; i++) {
+            this._list[i].update.apply(null, args);
+        }
+    };
 
     return Event;
 });

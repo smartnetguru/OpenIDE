@@ -4,13 +4,16 @@ using Ionic.Zip;
 using Microsoft.ClearScript;
 using Microsoft.ClearScript.Windows;
 using OpenIDE.Core.Contracts;
+using OpenIDE.Core.Extensibility.ScriptedProviders;
 using OpenIDE.Core.JSON;
+using OpenIDE.Library;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Xml;
 
 namespace OpenIDE.Core.Extensibility
@@ -24,7 +27,6 @@ namespace OpenIDE.Core.Extensibility
         public PropertyStorage Properties = new PropertyStorage();
         public List<Library> Dependencies { get; set; }
         public WindowCollection Windows { get; set; }
-
         public string Filename { get; set; }
         public EventStorage Events { get; set; }
 
@@ -78,33 +80,25 @@ namespace OpenIDE.Core.Extensibility
                 Dependencies.Add(l);
             }));
 
+            _engine.AddHostObject("globals", HostItemFlags.GlobalMembers, new Globals(this));
+
             _engine.Add("math", new OpenIDE.Library.Math());
             _engine.Add("JSON", new OpenIDE.Library.JSON());
-            _engine.Add("XmlHttpRequest", typeof(OpenIDE.Library.XmlHttpRequest));
+            _engine.Add("XmlHttpRequest", typeof(XmlHttpRequest));
             _engine.Add("console", new OpenIDE.Library.Console.FirebugConsole());
 
-            _engine.Add("argb", new Func<int, int, int, int, Color>((r, g, b, a) =>
-            {
-                return OpenIDE.Library.Functions.Argb(r, g, b, a);
-            }));
-            _engine.Add("hsla", new Func<double, double, double, int, Color>((h, s, l, a) =>
-            {
-                return OpenIDE.Library.Functions.Hsla(h, s, l, a);
-            }));
-            _engine.Add("hexadecimal", new Func<string, Color>(_ =>
-            {
-                return OpenIDE.Library.Functions.Hexadecimal(_);
-            }));
-            _engine.Add("register_window", new Action<string, Window>((n, w)=> Windows.Add(n, w)));
-            _engine.Add("notify", new Action<string, string>((title, content) => 
-                                    NotificationService.Notify(title, content)));
-            _engine.Add("prompt", new Func<string, string, string>((_, __) =>
-            {
-                return Prompt.Show(_, __);
-            }));
+            _engine.Add("register_window", new Action<string, Window>((n, w) => Windows.Add(n, w)));
+
             _engine.Add("debug", Workspace.Output);
-            
-            _engine.Add("plugin", this);
+            _engine.Add("register_completion", new Action<string, dynamic>((id, _) => {
+                foreach (var item in ItemTemplates)
+                {
+                    if(item.ID == Guid.Parse(id))
+                    {
+                        //item.AutoCompletionProvider = new ScriptedCompletionProvider(new List<string>(_));
+                    }
+                }
+            }));
 
             Events.Fire("OnReady");
         }
@@ -117,7 +111,7 @@ namespace OpenIDE.Core.Extensibility
             var parts = z.Entries;
             var pa = parts.ToList();
 
-            string props = "";
+            StringBuilder sources = new StringBuilder();
 
             for (int i = 0; i < pa.Count; i++)
             {
@@ -132,10 +126,10 @@ namespace OpenIDE.Core.Extensibility
 
                     p.Icons.Add(n, img);
                 }
-                if (part.FileName == "Sources/properties.js")
+                if (part.FileName.EndsWith(".js") && part.FileName.StartsWith("Sources/"))
                 {
-                    var src = new StreamReader(z["Sources/properties.js"].OpenReader()).ReadToEnd();
-                    props = src;
+                    var src = new StreamReader(z[part.FileName].OpenReader()).ReadToEnd();
+                    sources.AppendLine(src);
                 }
                 if (part.FileName == "info.json")
                 {
@@ -148,12 +142,12 @@ namespace OpenIDE.Core.Extensibility
 
             p.ReadItemtemplates(z);
 
-            p._engine = new JScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging | WindowsScriptEngineFlags.EnableDebugging);
+            p._engine = new JScriptEngine(WindowsScriptEngineFlags.EnableJITDebugging);
 
             p.InitEngine(z);
             p.ReadDependencies();
 
-            p._engine.Execute(props);
+            p._engine.Execute(sources.ToString());
             p._engine.Execute(new StreamReader(z["main.js"].OpenReader()).ReadToEnd());
 
             return p;

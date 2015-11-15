@@ -13,4 +13,3 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core.Contracts\bin\De
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core.Contracts\bin\Debug\System.Scripting.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core.Contracts\bin\Debug\Telerik.WinControls.RadDock.dll
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core.Contracts\bin\Debug\updateSystemDotNet.Controller.dll
-C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core.Contracts\obj\Debug\OpenIDE.Core.Contracts.csprojResolveAssemblyReference.cache

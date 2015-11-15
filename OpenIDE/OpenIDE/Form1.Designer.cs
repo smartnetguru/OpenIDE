@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup1 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
             Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup2 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
+            this.dockWindowPlaceholder2 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
+            this.dockWindowPlaceholder3 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
+            this.dockWindowPlaceholder1 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
             this.fileMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.newMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.newSolutionMenuItem = new Telerik.WinControls.UI.RadMenuItem();
@@ -57,17 +60,17 @@
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.saveButton = new Telerik.WinControls.UI.CommandBarButton();
             this.dock = new Telerik.WinControls.UI.Docking.RadDock();
-            this.toolboxWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
-            this.toolBox1 = new pplStuff.Controls.ToolBox();
+            this.solutionExplorerWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
+            this.explorerTreeView = new Telerik.WinControls.UI.RadTreeView();
             this.radSplitContainer4 = new Telerik.WinControls.UI.RadSplitContainer();
             this.toolTabStrip6 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
+            this.toolboxWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
+            this.toolBox1 = new pplStuff.Controls.ToolBox();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.documentTabStrip1 = new Telerik.WinControls.UI.Docking.DocumentTabStrip();
             this.startpageDocument = new Telerik.WinControls.UI.Docking.DocumentWindow();
             this.radSplitContainer5 = new Telerik.WinControls.UI.RadSplitContainer();
             this.toolTabStrip7 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
-            this.solutionExplorerWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
-            this.explorerTreeView = new Telerik.WinControls.UI.RadTreeView();
             this.teamExplorerWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.toolTabStrip8 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.propertiesWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
@@ -84,17 +87,16 @@
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.radContextMenu1 = new Telerik.WinControls.UI.RadContextMenu(this.components);
             this.addItemContextItem = new Telerik.WinControls.UI.RadMenuItem();
-            this.dockWindowPlaceholder1 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
-            this.dockWindowPlaceholder2 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
-            this.dockWindowPlaceholder3 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dock)).BeginInit();
             this.dock.SuspendLayout();
-            this.toolboxWindow.SuspendLayout();
+            this.solutionExplorerWindow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.explorerTreeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer4)).BeginInit();
             this.radSplitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip6)).BeginInit();
             this.toolTabStrip6.SuspendLayout();
+            this.toolboxWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             this.documentContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).BeginInit();
@@ -103,8 +105,6 @@
             this.radSplitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip7)).BeginInit();
             this.toolTabStrip7.SuspendLayout();
-            this.solutionExplorerWindow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.explorerTreeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip8)).BeginInit();
             this.toolTabStrip8.SuspendLayout();
             this.propertiesWindow.SuspendLayout();
@@ -118,6 +118,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dockWindowPlaceholder2
+            // 
+            this.dockWindowPlaceholder2.AutoHideSize = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder2.DockWindowName = "outputWindow";
+            this.dockWindowPlaceholder2.DockWindowText = "Output";
+            this.dockWindowPlaceholder2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dockWindowPlaceholder2.Location = new System.Drawing.Point(0, 0);
+            this.dockWindowPlaceholder2.Name = "dockWindowPlaceholder2";
+            this.dockWindowPlaceholder2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.dockWindowPlaceholder2.Size = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder2.Text = "dockWindowPlaceholder2";
+            // 
+            // dockWindowPlaceholder3
+            // 
+            this.dockWindowPlaceholder3.AutoHideSize = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder3.DockWindowName = "errorsWindow";
+            this.dockWindowPlaceholder3.DockWindowText = "Errors";
+            this.dockWindowPlaceholder3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dockWindowPlaceholder3.Location = new System.Drawing.Point(0, 0);
+            this.dockWindowPlaceholder3.Name = "dockWindowPlaceholder3";
+            this.dockWindowPlaceholder3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.dockWindowPlaceholder3.Size = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder3.Text = "dockWindowPlaceholder3";
+            // 
+            // dockWindowPlaceholder1
+            // 
+            this.dockWindowPlaceholder1.AutoHideSize = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder1.DockWindowName = "toolboxWindow";
+            this.dockWindowPlaceholder1.DockWindowText = "Toolbox";
+            this.dockWindowPlaceholder1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dockWindowPlaceholder1.Location = new System.Drawing.Point(0, 0);
+            this.dockWindowPlaceholder1.Name = "dockWindowPlaceholder1";
+            this.dockWindowPlaceholder1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.dockWindowPlaceholder1.Size = new System.Drawing.Size(200, 200);
+            this.dockWindowPlaceholder1.Text = "dockWindowPlaceholder1";
             // 
             // fileMenuItem
             // 
@@ -278,7 +314,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(897, 30);
+            this.radCommandBar1.Size = new System.Drawing.Size(897, 55);
             this.radCommandBar1.TabIndex = 1;
             this.radCommandBar1.Text = "radCommandBar1";
             this.radCommandBar1.ThemeName = "VisualStudio2012Dark";
@@ -318,13 +354,13 @@
             // 
             // dock
             // 
-            this.dock.ActiveWindow = this.solutionExplorerWindow;
+            this.dock.ActiveWindow = this.toolboxWindow;
             this.dock.CausesValidation = false;
             this.dock.Controls.Add(this.radSplitContainer4);
             this.dock.Controls.Add(this.toolTabStrip9);
             this.dock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dock.IsCleanUpTarget = true;
-            this.dock.Location = new System.Drawing.Point(0, 50);
+            this.dock.Location = new System.Drawing.Point(0, 75);
             this.dock.MainDocumentContainer = this.documentContainer1;
             this.dock.Name = "dock";
             this.dock.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -338,7 +374,7 @@
             this.dock.SerializableAutoHideContainer.BottomAutoHideGroups.Add(autoHideGroup1);
             autoHideGroup2.Windows.Add(this.dockWindowPlaceholder1);
             this.dock.SerializableAutoHideContainer.LeftAutoHideGroups.Add(autoHideGroup2);
-            this.dock.Size = new System.Drawing.Size(897, 437);
+            this.dock.Size = new System.Drawing.Size(897, 412);
             this.dock.SplitterWidth = 2;
             this.dock.TabIndex = 2;
             this.dock.TabStop = false;
@@ -347,27 +383,33 @@
             this.dock.DockWindowAdded += new Telerik.WinControls.UI.Docking.DockWindowEventHandler(this.dock_DockWindowAdded);
             this.dock.SelectedTabChanged += new Telerik.WinControls.UI.Docking.SelectedTabChangedEventHandler(this.dock_SelectedTabChanged);
             // 
-            // toolboxWindow
+            // solutionExplorerWindow
             // 
-            this.toolboxWindow.Caption = null;
-            this.toolboxWindow.Controls.Add(this.toolBox1);
-            this.toolboxWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.toolboxWindow.Location = new System.Drawing.Point(4, 24);
-            this.toolboxWindow.Name = "toolboxWindow";
-            this.toolboxWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolboxWindow.Size = new System.Drawing.Size(192, 207);
-            this.toolboxWindow.Text = "Toolbox";
+            this.solutionExplorerWindow.Caption = null;
+            this.solutionExplorerWindow.Controls.Add(this.explorerTreeView);
+            this.solutionExplorerWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.solutionExplorerWindow.Location = new System.Drawing.Point(4, 24);
+            this.solutionExplorerWindow.Name = "solutionExplorerWindow";
+            this.solutionExplorerWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Hidden;
+            this.solutionExplorerWindow.Size = new System.Drawing.Size(192, 51);
+            this.solutionExplorerWindow.Text = "Solution Explorer";
             // 
-            // toolBox1
+            // explorerTreeView
             // 
-            this.toolBox1.AutoScroll = true;
-            this.toolBox1.BackColor = System.Drawing.Color.White;
-            this.toolBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolBox1.ImageList = null;
-            this.toolBox1.Location = new System.Drawing.Point(0, 0);
-            this.toolBox1.Name = "toolBox1";
-            this.toolBox1.Size = new System.Drawing.Size(192, 207);
-            this.toolBox1.TabIndex = 0;
+            this.explorerTreeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.explorerTreeView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.explorerTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.explorerTreeView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.explorerTreeView.ForeColor = System.Drawing.Color.White;
+            this.explorerTreeView.Location = new System.Drawing.Point(0, 0);
+            this.explorerTreeView.Name = "explorerTreeView";
+            this.explorerTreeView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.explorerTreeView.Size = new System.Drawing.Size(192, 51);
+            this.explorerTreeView.TabIndex = 0;
+            this.explorerTreeView.ThemeName = "VisualStudio2012Dark";
+            this.explorerTreeView.SelectedNodeChanged += new Telerik.WinControls.UI.RadTreeView.RadTreeViewEventHandler(this.radTreeView1_SelectedNodeChanged);
+            this.explorerTreeView.NodeMouseDoubleClick += new Telerik.WinControls.UI.RadTreeView.TreeViewEventHandler(this.explorerTreeView_NodeMouseDoubleClick);
+            this.explorerTreeView.NodeExpandedChanged += new Telerik.WinControls.UI.RadTreeView.TreeViewEventHandler(this.explorerTreeView_NodeExpandedChanged);
             // 
             // radSplitContainer4
             // 
@@ -383,7 +425,7 @@
             // 
             // 
             this.radSplitContainer4.RootElement.MinSize = new System.Drawing.Size(0, 0);
-            this.radSplitContainer4.Size = new System.Drawing.Size(897, 235);
+            this.radSplitContainer4.Size = new System.Drawing.Size(897, 210);
             this.radSplitContainer4.SplitterWidth = 2;
             this.radSplitContainer4.TabIndex = 0;
             this.radSplitContainer4.TabStop = false;
@@ -401,10 +443,32 @@
             // 
             this.toolTabStrip6.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip6.SelectedIndex = 0;
-            this.toolTabStrip6.Size = new System.Drawing.Size(200, 235);
+            this.toolTabStrip6.Size = new System.Drawing.Size(200, 210);
             this.toolTabStrip6.TabIndex = 6;
             this.toolTabStrip6.TabStop = false;
             this.toolTabStrip6.ThemeName = "VisualStudio2012Dark";
+            // 
+            // toolboxWindow
+            // 
+            this.toolboxWindow.Caption = null;
+            this.toolboxWindow.Controls.Add(this.toolBox1);
+            this.toolboxWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.toolboxWindow.Location = new System.Drawing.Point(4, 24);
+            this.toolboxWindow.Name = "toolboxWindow";
+            this.toolboxWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.toolboxWindow.Size = new System.Drawing.Size(192, 182);
+            this.toolboxWindow.Text = "Toolbox";
+            // 
+            // toolBox1
+            // 
+            this.toolBox1.AutoScroll = true;
+            this.toolBox1.BackColor = System.Drawing.Color.White;
+            this.toolBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolBox1.ImageList = null;
+            this.toolBox1.Location = new System.Drawing.Point(0, 0);
+            this.toolBox1.Name = "toolBox1";
+            this.toolBox1.Size = new System.Drawing.Size(192, 182);
+            this.toolBox1.TabIndex = 0;
             // 
             // documentContainer1
             // 
@@ -432,7 +496,7 @@
             // 
             this.documentTabStrip1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.documentTabStrip1.SelectedIndex = 0;
-            this.documentTabStrip1.Size = new System.Drawing.Size(493, 235);
+            this.documentTabStrip1.Size = new System.Drawing.Size(493, 210);
             this.documentTabStrip1.TabIndex = 0;
             this.documentTabStrip1.TabStop = false;
             this.documentTabStrip1.ThemeName = "VisualStudio2012Dark";
@@ -443,7 +507,7 @@
             this.startpageDocument.Location = new System.Drawing.Point(4, 29);
             this.startpageDocument.Name = "startpageDocument";
             this.startpageDocument.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument;
-            this.startpageDocument.Size = new System.Drawing.Size(485, 202);
+            this.startpageDocument.Size = new System.Drawing.Size(485, 177);
             this.startpageDocument.Text = "Startpage";
             // 
             // radSplitContainer5
@@ -460,7 +524,7 @@
             // 
             // 
             this.radSplitContainer5.RootElement.MinSize = new System.Drawing.Size(0, 0);
-            this.radSplitContainer5.Size = new System.Drawing.Size(200, 235);
+            this.radSplitContainer5.Size = new System.Drawing.Size(200, 210);
             this.radSplitContainer5.SplitterWidth = 2;
             this.radSplitContainer5.TabIndex = 5;
             this.radSplitContainer5.TabStop = false;
@@ -479,38 +543,10 @@
             // 
             this.toolTabStrip7.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip7.SelectedIndex = 0;
-            this.toolTabStrip7.Size = new System.Drawing.Size(200, 116);
+            this.toolTabStrip7.Size = new System.Drawing.Size(200, 104);
             this.toolTabStrip7.TabIndex = 6;
             this.toolTabStrip7.TabStop = false;
             this.toolTabStrip7.ThemeName = "VisualStudio2012Dark";
-            // 
-            // solutionExplorerWindow
-            // 
-            this.solutionExplorerWindow.Caption = null;
-            this.solutionExplorerWindow.Controls.Add(this.explorerTreeView);
-            this.solutionExplorerWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.solutionExplorerWindow.Location = new System.Drawing.Point(4, 24);
-            this.solutionExplorerWindow.Name = "solutionExplorerWindow";
-            this.solutionExplorerWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Hidden;
-            this.solutionExplorerWindow.Size = new System.Drawing.Size(192, 63);
-            this.solutionExplorerWindow.Text = "Solution Explorer";
-            // 
-            // explorerTreeView
-            // 
-            this.explorerTreeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.explorerTreeView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.explorerTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.explorerTreeView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.explorerTreeView.ForeColor = System.Drawing.Color.White;
-            this.explorerTreeView.Location = new System.Drawing.Point(0, 0);
-            this.explorerTreeView.Name = "explorerTreeView";
-            this.explorerTreeView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.explorerTreeView.Size = new System.Drawing.Size(192, 63);
-            this.explorerTreeView.TabIndex = 0;
-            this.explorerTreeView.ThemeName = "VisualStudio2012Dark";
-            this.explorerTreeView.SelectedNodeChanged += new Telerik.WinControls.UI.RadTreeView.RadTreeViewEventHandler(this.radTreeView1_SelectedNodeChanged);
-            this.explorerTreeView.NodeMouseDoubleClick += new Telerik.WinControls.UI.RadTreeView.TreeViewEventHandler(this.explorerTreeView_NodeMouseDoubleClick);
-            this.explorerTreeView.NodeExpandedChanged += new Telerik.WinControls.UI.RadTreeView.TreeViewEventHandler(this.explorerTreeView_NodeExpandedChanged);
             // 
             // teamExplorerWindow
             // 
@@ -526,14 +562,14 @@
             // 
             this.toolTabStrip8.CanUpdateChildIndex = true;
             this.toolTabStrip8.Controls.Add(this.propertiesWindow);
-            this.toolTabStrip8.Location = new System.Drawing.Point(0, 118);
+            this.toolTabStrip8.Location = new System.Drawing.Point(0, 106);
             this.toolTabStrip8.Name = "toolTabStrip8";
             // 
             // 
             // 
             this.toolTabStrip8.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip8.SelectedIndex = 0;
-            this.toolTabStrip8.Size = new System.Drawing.Size(200, 117);
+            this.toolTabStrip8.Size = new System.Drawing.Size(200, 104);
             this.toolTabStrip8.TabIndex = 5;
             this.toolTabStrip8.TabStop = false;
             this.toolTabStrip8.ThemeName = "VisualStudio2012Dark";
@@ -546,7 +582,7 @@
             this.propertiesWindow.Location = new System.Drawing.Point(4, 24);
             this.propertiesWindow.Name = "propertiesWindow";
             this.propertiesWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.propertiesWindow.Size = new System.Drawing.Size(192, 89);
+            this.propertiesWindow.Size = new System.Drawing.Size(192, 76);
             this.propertiesWindow.Text = "Properties";
             // 
             // radPropertyGrid1
@@ -557,7 +593,7 @@
             this.radPropertyGrid1.Location = new System.Drawing.Point(0, 0);
             this.radPropertyGrid1.Name = "radPropertyGrid1";
             this.radPropertyGrid1.PropertySort = System.Windows.Forms.PropertySort.Alphabetical;
-            this.radPropertyGrid1.Size = new System.Drawing.Size(192, 89);
+            this.radPropertyGrid1.Size = new System.Drawing.Size(192, 76);
             this.radPropertyGrid1.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.radPropertyGrid1.TabIndex = 1;
             this.radPropertyGrid1.Text = "radPropertyGrid1";
@@ -575,7 +611,7 @@
             this.toolTabStrip9.CausesValidation = false;
             this.toolTabStrip9.Controls.Add(this.outputWindow);
             this.toolTabStrip9.Controls.Add(this.errorsWindow);
-            this.toolTabStrip9.Location = new System.Drawing.Point(0, 237);
+            this.toolTabStrip9.Location = new System.Drawing.Point(0, 212);
             this.toolTabStrip9.Name = "toolTabStrip9";
             // 
             // 
@@ -665,42 +701,6 @@
             this.addItemContextItem.Name = "addItemContextItem";
             this.addItemContextItem.Text = "Add Item";
             // 
-            // dockWindowPlaceholder1
-            // 
-            this.dockWindowPlaceholder1.AutoHideSize = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder1.DockWindowName = "toolboxWindow";
-            this.dockWindowPlaceholder1.DockWindowText = "Toolbox";
-            this.dockWindowPlaceholder1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dockWindowPlaceholder1.Location = new System.Drawing.Point(0, 0);
-            this.dockWindowPlaceholder1.Name = "dockWindowPlaceholder1";
-            this.dockWindowPlaceholder1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.dockWindowPlaceholder1.Size = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder1.Text = "dockWindowPlaceholder1";
-            // 
-            // dockWindowPlaceholder2
-            // 
-            this.dockWindowPlaceholder2.AutoHideSize = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder2.DockWindowName = "outputWindow";
-            this.dockWindowPlaceholder2.DockWindowText = "Output";
-            this.dockWindowPlaceholder2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dockWindowPlaceholder2.Location = new System.Drawing.Point(0, 0);
-            this.dockWindowPlaceholder2.Name = "dockWindowPlaceholder2";
-            this.dockWindowPlaceholder2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.dockWindowPlaceholder2.Size = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder2.Text = "dockWindowPlaceholder2";
-            // 
-            // dockWindowPlaceholder3
-            // 
-            this.dockWindowPlaceholder3.AutoHideSize = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder3.DockWindowName = "errorsWindow";
-            this.dockWindowPlaceholder3.DockWindowText = "Errors";
-            this.dockWindowPlaceholder3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dockWindowPlaceholder3.Location = new System.Drawing.Point(0, 0);
-            this.dockWindowPlaceholder3.Name = "dockWindowPlaceholder3";
-            this.dockWindowPlaceholder3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.dockWindowPlaceholder3.Size = new System.Drawing.Size(200, 200);
-            this.dockWindowPlaceholder3.Text = "dockWindowPlaceholder3";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,11 +723,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dock)).EndInit();
             this.dock.ResumeLayout(false);
-            this.toolboxWindow.ResumeLayout(false);
+            this.solutionExplorerWindow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.explorerTreeView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer4)).EndInit();
             this.radSplitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip6)).EndInit();
             this.toolTabStrip6.ResumeLayout(false);
+            this.toolboxWindow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             this.documentContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentTabStrip1)).EndInit();
@@ -736,8 +738,6 @@
             this.radSplitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip7)).EndInit();
             this.toolTabStrip7.ResumeLayout(false);
-            this.solutionExplorerWindow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.explorerTreeView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip8)).EndInit();
             this.toolTabStrip8.ResumeLayout(false);
             this.propertiesWindow.ResumeLayout(false);

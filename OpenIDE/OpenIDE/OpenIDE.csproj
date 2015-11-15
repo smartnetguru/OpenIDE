@@ -198,6 +198,10 @@
       <Project>{ffa18ccb-077c-4040-897b-f12e4d44ad73}</Project>
       <Name>OpenIDE.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenIDE.Library\OpenIDE.Library.csproj">
+      <Project>{8048d1bd-c332-4b60-a114-da04cf131698}</Project>
+      <Name>OpenIDE.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpenIDEIcon.ico" />

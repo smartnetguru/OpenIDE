@@ -10,8 +10,6 @@ namespace OpenIDE.Core.Contracts
 
         public DockWindow Window { get; set; }
 
-        public byte[] Data { get; set; }
-
         public static View FromXaml(string src)
         {
             var ui = XamlServices.Parse(src) as UserControl;

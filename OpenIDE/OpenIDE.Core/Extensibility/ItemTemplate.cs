@@ -15,6 +15,7 @@ namespace OpenIDE.Core.Extensibility
         public View View { get; internal set; }
         public string ViewSource { get; internal set; }
         public byte[] Raw { get; set; }
+        public DigitalRune.Windows.TextEditor.Completion.AbstractCompletionDataProvider AutoCompletionProvider { get; set; }
 
         public ItemTemplate()
         {

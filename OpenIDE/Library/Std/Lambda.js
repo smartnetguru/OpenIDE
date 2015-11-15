@@ -1,25 +1,43 @@
-define("Lambda", function() {
+/*
+ * Lambda.js: String based lambdas for Node.js and the browser.
+ *
+ * Copyright (c) 2007 Oliver Steele (steele@osteele.com)
+ * Released under MIT license.
+ *
+ * Version: 1.0.2
+ *
+ */
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        define("lambda", factory);
+    } else {
+        root.lambda = factory();
+    }
+})(this, function () {
+
     var
-            split = 'ab'.split(/a*/).length > 1 ? String.prototype.split : function (separator) {
-                var result = this.split.apply(this, arguments),
-                    re = RegExp(separator),
-                    savedIndex = re.lastIndex,
-                    match = re.exec(this);
-                if (match && match.index === 0) {
-                    result.unshift('');
+        split = 'ab'.split(/a*/).length > 1 ? String.prototype.split : function (separator) {
+            var result = this.split.apply(this, arguments),
+                re = RegExp(separator),
+                savedIndex = re.lastIndex,
+                match = re.exec(this);
+            if (match && match.index === 0) {
+                result.unshift('');
+            }
+            re.lastIndex = savedIndex;
+            return result;
+        },
+        indexOf = Array.prototype.indexOf || function (element) {
+            for (var i = 0, e; e = this[i]; i++) {
+                if (e === element) {
+                    return i;
                 }
-                re.lastIndex = savedIndex;
-                return result;
-            },
-            indexOf = Array.prototype.indexOf || function (element) {
-                for (var i = 0, e; e = this[i]; i++) {
-                    if (e === element) {
-                        return i;
-                    }
-                }
-                return -1;
-            };
-    
+            }
+            return -1;
+        };
+
     function lambda(expression) {
         var parameters = [],
             sections = split.call(expression, /\s*=>\s*/m);
@@ -54,6 +72,8 @@ define("Lambda", function() {
         }
         return new Function(parameters, 'return (' + expression + ')');
     }
-    
+
     return lambda;
 });
+
+$["lambda"] = lambda;
