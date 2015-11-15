@@ -115,7 +115,7 @@
     <Compile Include="IntellisensDefinition\ItemCollection.cs" />
     <Compile Include="IntellisensDefinition\Method.cs" />
     <Compile Include="IntellisensDefinition\Object.cs" />
-    <Compile Include="JsonExtensionResolver.cs" />
+    <Compile Include="JsonExtensions\Engine\JsonExtensionResolver.cs" />
     <Compile Include="JsonExtensions\GuidExtension.cs" />
     <Compile Include="JSON\ArrayValue.cs" />
     <Compile Include="JSON\Framework\CharParsers.cs" />
@@ -134,6 +134,8 @@
     <Compile Include="Localisation\ICatalog.cs" />
     <Compile Include="Localisation\Loaders\MoFileParser.cs" />
     <Compile Include="Localisation\Plural\PluralFormProcessor.cs" />
+    <Compile Include="JsonExtensions\Engine\MarkupExtensionParser.cs" />
+    <Compile Include="JsonExtensions\Engine\MarkupExtension.cs" />
     <Compile Include="NotificationService.cs" />
     <Compile Include="Options\OptionsForm.cs">
       <SubType>Form</SubType>

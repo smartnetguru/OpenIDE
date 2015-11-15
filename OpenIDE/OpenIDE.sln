@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Library", "OpenIDE.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginCompiler", "PluginCompiler\PluginCompiler.csproj", "{34CEFEB3-EB00-41AE-8789-D395CCF6F02A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F894800B-88D8-4704-A581-0783DC167A42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIDE.Core Tests", "OpenIDE.Core Tests\OpenIDE.Core Tests.csproj", "{3953862E-DCC3-4CC0-B60E-A2E9052E9909}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,12 +75,17 @@ Global
 		{34CEFEB3-EB00-41AE-8789-D395CCF6F02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34CEFEB3-EB00-41AE-8789-D395CCF6F02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34CEFEB3-EB00-41AE-8789-D395CCF6F02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3953862E-DCC3-4CC0-B60E-A2E9052E9909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3953862E-DCC3-4CC0-B60E-A2E9052E9909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3953862E-DCC3-4CC0-B60E-A2E9052E9909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3953862E-DCC3-4CC0-B60E-A2E9052E9909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{24B35A54-BB40-47B8-BDB1-CA65E15D2EA3} = {69AD7D95-EE84-42D8-B52C-3F0F006D6473}
+		{3953862E-DCC3-4CC0-B60E-A2E9052E9909} = {F894800B-88D8-4704-A581-0783DC167A42}
 	EndGlobalSection
 	GlobalSection(AutomaticVersions) = postSolution
 		AssemblyInfoFilePath = Properties\AsemblyInfo.cs
