@@ -36,7 +36,7 @@ namespace OpenIDE.Core
             {
                 var me = MarkupExtensionParser.Parse(src);
 
-                if(me.Name == "")
+                if(me.Name == null)
                 {
                     return src as T;
                 }
