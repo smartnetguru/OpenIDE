@@ -165,6 +165,12 @@ namespace OpenIDE
             outputWindow.Text = LanguageManager._("Output");
 
             fileMenuItem.Text = LanguageManager._("File");
+            newMenuItem.Text = LanguageManager._("New");
+            newSolutionMenuItem.Text = LanguageManager._("Solution");
+            newProjectMenuItem.Text = LanguageManager._("Project");
+            newFileMenuItem.Text = LanguageManager._("File");
+
+
             editMenuItem.Text = LanguageManager._("Edit");
             viewMenuItem.Text = LanguageManager._("View");
             toolsMenuItem.Text = LanguageManager._("Tools");
