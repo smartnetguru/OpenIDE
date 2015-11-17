@@ -37,7 +37,7 @@ namespace OpenIDE
                 Updater.Update();
             }
 
-            LanguageManager.Init(CultureInfo.GetCultureInfo("en-US"));
+            LanguageManager.Init(CultureInfo.GetCultureInfo("de-DE"));
 
             Form1 mf = new Form1();
             mf.Show();

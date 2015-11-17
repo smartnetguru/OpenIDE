@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenIDE\n"
 "POT-Creation-Date: 2015-11-02 17:50+0100\n"
-"PO-Revision-Date: 2015-11-02 17:50+0100\n"
+"PO-Revision-Date: 2015-11-17 17:07+0100\n"
 "Last-Translator: Chris Anders <info@furesoft.de>\n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,45 +22,45 @@ msgstr "Start"
 
 #: OpenIDE.Core/StartPage.cs:29
 msgid "News"
-msgstr "News"
+msgstr "Neuigkeiten"
 
 #: OpenIDE.Core/StartPage.cs:30 OpenIDE/Dialogs/NewProjectDialog.cs:44
 msgid "New Project"
-msgstr "New Project"
+msgstr "Neues Projekt"
 
 #: OpenIDE.Core/StartPage.cs:31
 msgid "Open Project"
-msgstr "Open Project"
+msgstr "Projekt öffnen"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:21
 msgid "Please enter your Beta-Key to try OpenDevelop:"
-msgstr "Please enter your Beta-Key to try OpenDevelop:"
+msgstr "Bitte gebe deinen Beta-Key ein:"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:23 OpenIDE/Dialogs/NewItemDialog.cs:47
 #: OpenIDE/Dialogs/NewProjectDialog.cs:47 OpenIDE/RadAboutBox1.cs:33
 msgid "OK"
-msgstr "OK"
+msgstr "Ok"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:24 OpenIDE/Dialogs/NewItemDialog.cs:48
 #: OpenIDE/Dialogs/NewProjectDialog.cs:48
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Abbrechen"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:26
 msgid "BetaKey"
-msgstr "BetaKey"
+msgstr "BetaäKey"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:43
 msgid "Your Beta-Key is expired!!"
-msgstr "Your Beta-Key is expired!!"
+msgstr "Dein Beta-Key ist abgelaufen!!"
 
 #: OpenIDE/Dialogs/BetaKeyDialog.cs:54
 msgid "Your Beta-Key is invalid!!"
-msgstr "Your Beta-Key is invalid!!"
+msgstr "Dein Beta-Key ist nicht korrekt!!"
 
 #: OpenIDE/Dialogs/NewItemDialog.cs:44
 msgid "New Item"
-msgstr "New Item"
+msgstr "Neue Datei"
 
 #: OpenIDE/Dialogs/NewItemDialog.cs:45 OpenIDE/Dialogs/NewProjectDialog.cs:45
 #: OpenIDE/Form1.cs:165
@@ -69,7 +69,7 @@ msgstr "Name"
 
 #: OpenIDE/Dialogs/OptionsDialog.cs:18
 msgid "Options"
-msgstr "Options"
+msgstr "Optionen"
 
 #: OpenIDE/Dialogs/PluginManager.cs:22
 msgid "PluginManager"
@@ -77,7 +77,7 @@ msgstr "PluginManager"
 
 #: OpenIDE/Dialogs/PluginManager.cs:23
 msgid "Installed Plugins"
-msgstr "InstalledPlugins"
+msgstr "Installierte Plugins"
 
 #: OpenIDE/Dialogs/PluginManager.cs:24
 msgid "Online Plugins"
@@ -85,11 +85,11 @@ msgstr "Online Plugins"
 
 #: OpenIDE/Form1.cs:133
 msgid "Startpage"
-msgstr "Startpage"
+msgstr "Startseite"
 
 #: OpenIDE/Form1.cs:134
 msgid "SolutionExplorer"
-msgstr "Solution Explorer"
+msgstr "Projektmappen Explorer"
 
 #: OpenIDE/Form1.cs:135
 msgid "Toolbox"
@@ -97,59 +97,59 @@ msgstr "Toolbox"
 
 #: OpenIDE/Form1.cs:136
 msgid "Properties"
-msgstr "Properties"
+msgstr "Eigenschaften"
 
 #: OpenIDE/Form1.cs:138
 msgid "File"
-msgstr "File"
+msgstr "Datei"
 
 #: OpenIDE/Form1.cs:139
 msgid "Edit"
-msgstr "Edit"
+msgstr "Bearbeiten"
 
 #: OpenIDE/Form1.cs:140
 msgid "View"
-msgstr "View"
+msgstr "Ansicht"
 
 #: OpenIDE/Form1.cs:141
 msgid "Tools"
-msgstr "Tools"
+msgstr "Werkzeuge"
 
 #: OpenIDE/Form1.cs:142
 msgid "Window"
-msgstr "Window"
+msgstr "Fenster"
 
 #: OpenIDE/Form1.cs:143
 msgid "Help"
-msgstr "Help"
+msgstr "Hilfe"
 
 #: OpenIDE/Form1.cs:145
 msgid "Check for Updates"
-msgstr "Check for Updates"
+msgstr "Auf Aktualisierung prüfen"
 
 #: OpenIDE/Form1.cs:146
 msgid "About"
-msgstr "About"
+msgstr "Über"
 
 #: OpenIDE/Form1.cs:148
 msgid "Open Solution"
-msgstr "Open Solution"
+msgstr "Projektmappe öffnen"
 
 #: OpenIDE/Form1.cs:149
 msgid "Exit"
-msgstr "Exit"
+msgstr "Schließen"
 
 #: OpenIDE/Form1.cs:155
 msgid "An Update is available."
-msgstr "An Update is available."
+msgstr "Eine Aktualisierung ist verfügbar."
 
 #: OpenIDE/Form1.cs:165
 msgid "Please specifiy an solution name"
-msgstr "Please specifiy an solution name"
+msgstr "Bitte gebe deiner Projektmappe einen Namen"
 
 #: OpenIDE/RadAboutBox1.cs:29
 msgid "Company"
-msgstr "Company"
+msgstr "Firma"
 
 #: OpenIDE/RadAboutBox1.cs:30
 msgid "Copyright"
@@ -157,7 +157,7 @@ msgstr "Copyright"
 
 #: OpenIDE/RadAboutBox1.cs:31
 msgid "Productname"
-msgstr "Productname"
+msgstr "Produkt"
 
 #: OpenIDE/RadAboutBox1.cs:32
 msgid "Version"

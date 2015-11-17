@@ -11,7 +11,7 @@ namespace OpenIDE.Core
 
         public static void Init(System.Globalization.CultureInfo culture)
         {
-            _catalog = new Catalog(culture.Name, Application.StartupPath + "\\locale\\", culture);
+            _catalog = new Catalog(culture.Name.Replace("-", "_"), Application.StartupPath + "\\locale\\", culture);
         }
 
         public static string _(string id)
