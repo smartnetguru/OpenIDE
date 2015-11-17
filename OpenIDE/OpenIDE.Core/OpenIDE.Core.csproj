@@ -92,6 +92,13 @@
   <ItemGroup>
     <Compile Include="Argument.cs" />
     <Compile Include="Arguments.cs" />
+    <Compile Include="Controls\CommandHistory.cs" />
+    <Compile Include="Controls\ShellControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShellTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EditorBuilder.cs" />
     <Compile Include="EventStorage.cs" />
     <Compile Include="Extensibility\ItemTemplate.cs" />
@@ -211,6 +218,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\ShellControl.resx">
+      <DependentUpon>ShellControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShellTextBox.resx">
+      <DependentUpon>ShellTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>

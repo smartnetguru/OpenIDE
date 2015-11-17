@@ -24,3 +24,5 @@ C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\Teleri
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\GLib.Options.OptionsForm.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\GLib.Options.OptionsPanel.resources
 C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\bin\Debug\pplStuff.Controls.ToolBox.dll
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenIDE.Core.Controls.ShellControl.resources
+C:\Users\filmee24\Documents\GitHub\OpenIDE\OpenIDE\OpenIDE.Core\obj\Debug\OpenIDE.Core.Controls.ShellTextBox.resources
