@@ -12,11 +12,11 @@ namespace OpenIDE.Core
     {
         public static Dictionary<Guid, Image> Icons = new Dictionary<Guid, Image>();
 
-        public static RadTreeNode Build(Project proj, RadContextMenu radContextMenu1)
+        public static RadTreeNode Build(Project proj, RadContextMenu projectContextMenu, RadContextMenu fileContextMenu)
         {
             var pn = new RadTreeNode($"Project '{proj.Name}'", true);
             pn.Tag = proj;
-            pn.ContextMenu = radContextMenu1;
+            pn.ContextMenu = projectContextMenu;
 
             var props = new RadTreeNode("Properties", Resources.Property, true);
             props.Tag = new PropertiesView();
@@ -26,7 +26,7 @@ namespace OpenIDE.Core
 
             foreach (var f in proj.Files)
             {
-                var n = Build(f);
+                var n = Build(f, fileContextMenu);                
 
                 pn.Nodes.Add(n);
             }
@@ -34,14 +34,15 @@ namespace OpenIDE.Core
             return pn;
         }
 
-        public static RadTreeNode Build(Solution sol, RadContextMenu radContextMenu1)
+        public static RadTreeNode Build(Solution sol, RadContextMenu solutionContextMenu, RadContextMenu projectContextMenu, RadContextMenu fileContextMenu)
         {
             var ret = new RadTreeNode($"Solution '{sol.Name}'", true);
             ret.Tag = sol;
+            ret.ContextMenu = solutionContextMenu;
 
             foreach (var p in sol.Projects)
             {
-                var pn = Build(p, radContextMenu1);
+                var pn = Build(p, projectContextMenu, fileContextMenu);
 
                 ret.Nodes.Add(pn);
             }
@@ -49,10 +50,11 @@ namespace OpenIDE.Core
             return ret;
         }
 
-        public static RadTreeNode Build(File sol)
+        public static RadTreeNode Build(File sol, RadContextMenu fileContextMenu)
         {
             var n = new RadTreeNode(sol.Name);
             n.Tag = sol;
+            n.ContextMenu = fileContextMenu;
 
             if (Icons.ContainsKey(sol.ID))
             {
@@ -62,10 +64,11 @@ namespace OpenIDE.Core
             return n;
         }
 
-        public static RadTreeNode Build(Project sol)
+        public static RadTreeNode Build(Project sol, RadContextMenu projectContextMenu)
         {
             var n = new RadTreeNode(sol.Name);
             n.Tag = sol;
+            n.ContextMenu = projectContextMenu;
 
             if (Icons.ContainsKey(sol.Type))
             {

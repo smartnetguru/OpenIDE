@@ -83,7 +83,7 @@ namespace OpenIDE
                             newFileMenuItem.Enabled = true;
 
                             explorerTreeView.Nodes.Clear();
-                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
 
                             break;
                         case "proj":
@@ -98,7 +98,7 @@ namespace OpenIDE
                             f.ID = Utils.GetTemplateID(shortF);
 
                             explorerTreeView.Nodes.Clear();
-                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(f));
+                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(f, fileContextMenu));
 
                             ItemTemplate np = null;
                             Plugin npp = null;
@@ -188,7 +188,7 @@ namespace OpenIDE
                 Workspace.Solution.Name = name;
 
                 explorerTreeView.Nodes.Clear();
-                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
 
                 Directory.CreateDirectory(folderBrowserDialog1.SelectedPath + "\\" + name);
 
@@ -215,7 +215,7 @@ namespace OpenIDE
                 Workspace.Solution.Projects.Add(f);
 
                 explorerTreeView.Nodes.Clear();
-                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
 
                 var path = new FileInfo(Workspace.SolutionPath).Directory.FullName;
 
@@ -244,7 +244,7 @@ namespace OpenIDE
                 newFileMenuItem.Enabled = true;
 
                 explorerTreeView.Nodes.Clear();
-                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
             }
         }
 
@@ -266,7 +266,7 @@ namespace OpenIDE
                 Workspace.SelectedProject.Files.Add(f);
 
                 explorerTreeView.Nodes.Clear();
-                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, radContextMenu1));
+                explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
 
                 Workspace.Solution.Save(Workspace.SolutionPath);
                 var fi = new FileInfo(Workspace.SolutionPath).Directory.FullName + "\\" + f.Name;

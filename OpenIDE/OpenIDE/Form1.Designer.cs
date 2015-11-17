@@ -87,11 +87,13 @@
             this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            this.radContextMenu1 = new Telerik.WinControls.UI.RadContextMenu(this.components);
+            this.projectContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
             this.addItemContextItem = new Telerik.WinControls.UI.RadMenuItem();
             this.consoleControl = new OpenIDE.Core.Controls.ShellControl();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolTabStrip2 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
+            this.fileContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
+            this.solutionContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dock)).BeginInit();
             this.dock.SuspendLayout();
@@ -611,6 +613,7 @@
             // 
             this.radPropertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPropertyGrid1.EnableCustomGrouping = true;
+            this.radPropertyGrid1.HelpVisible = false;
             this.radPropertyGrid1.KeyboardSearchEnabled = true;
             this.radPropertyGrid1.Location = new System.Drawing.Point(0, 0);
             this.radPropertyGrid1.Name = "radPropertyGrid1";
@@ -622,8 +625,10 @@
             this.radPropertyGrid1.ThemeName = "VisualStudio2012Dark";
             this.radPropertyGrid1.ToolbarVisible = true;
             ((Telerik.WinControls.UI.PropertyGridSizeGripElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Enabled = true;
+            ((Telerik.WinControls.UI.PropertyGridSizeGripElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             ((Telerik.WinControls.UI.PropertyGridHelpElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(2))).EnableImageTransparency = false;
             ((Telerik.WinControls.UI.PropertyGridHelpElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(2))).Enabled = true;
+            ((Telerik.WinControls.UI.PropertyGridHelpElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             ((Telerik.WinControls.UI.PropertyGridHelpTitleElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(0))).Enabled = false;
             ((Telerik.WinControls.UI.PropertyGridHelpContentElement)(this.radPropertyGrid1.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(1))).Enabled = false;
             // 
@@ -703,11 +708,11 @@
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "VisualStudio2012Dark";
             // 
-            // radContextMenu1
+            // projectContextMenu
             // 
-            this.radContextMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.projectContextMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.addItemContextItem});
-            this.radContextMenu1.ThemeName = "VisualStudio2012Dark";
+            this.projectContextMenu.ThemeName = "VisualStudio2012Dark";
             // 
             // addItemContextItem
             // 
@@ -860,7 +865,7 @@
         private Telerik.WinControls.UI.RadTextBoxControl outputTextBox;
         private Telerik.WinControls.UI.RadListControl errorsListBox;
         private Telerik.WinControls.UI.RadMenuItem optionsMenuItem;
-        private Telerik.WinControls.UI.RadContextMenu radContextMenu1;
+        private Telerik.WinControls.UI.RadContextMenu projectContextMenu;
         private Telerik.WinControls.UI.RadMenuItem addItemContextItem;
         private Telerik.WinControls.UI.Docking.ToolWindow teamExplorerWindow;
         private Telerik.WinControls.UI.RadSplitContainer radSplitContainer4;
@@ -877,5 +882,7 @@
         private Core.Controls.ShellControl consoleControl;
         private Telerik.WinControls.UI.Docking.ToolTabStrip toolTabStrip1;
         private Telerik.WinControls.UI.Docking.ToolTabStrip toolTabStrip2;
+        private Telerik.WinControls.UI.RadContextMenu fileContextMenu;
+        private Telerik.WinControls.UI.RadContextMenu solutionContextMenu;
     }
 }
