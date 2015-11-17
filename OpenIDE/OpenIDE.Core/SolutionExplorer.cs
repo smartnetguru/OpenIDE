@@ -14,11 +14,11 @@ namespace OpenIDE.Core
 
         public static RadTreeNode Build(Project proj, RadContextMenu projectContextMenu, RadContextMenu fileContextMenu)
         {
-            var pn = new RadTreeNode($"Project '{proj.Name}'", true);
+            var pn = new RadTreeNode(LanguageManager._("Project") + $" '{proj.Name}'", true);
             pn.Tag = proj;
             pn.ContextMenu = projectContextMenu;
 
-            var props = new RadTreeNode("Properties", Resources.Property, true);
+            var props = new RadTreeNode(LanguageManager._("Properties"), Resources.Property, true);
             props.Tag = new PropertiesView();
             pn.Nodes.Add(props);
 
@@ -36,7 +36,7 @@ namespace OpenIDE.Core
 
         public static RadTreeNode Build(Solution sol, RadContextMenu solutionContextMenu, RadContextMenu projectContextMenu, RadContextMenu fileContextMenu)
         {
-            var ret = new RadTreeNode($"Solution '{sol.Name}'", true);
+            var ret = new RadTreeNode(LanguageManager._("Solution") + $" '{sol.Name}'", true);
             ret.Tag = sol;
             ret.ContextMenu = solutionContextMenu;
 

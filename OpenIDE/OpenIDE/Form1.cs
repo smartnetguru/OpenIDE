@@ -87,6 +87,10 @@ namespace OpenIDE
 
                             break;
                         case "proj":
+                            var p = Project.Load(file);
+
+                            explorerTreeView.Nodes.Clear();
+                            explorerTreeView.Nodes.Add(SolutionExplorer.Build(p, projectContextMenu, fileContextMenu));
 
                             break;
                         default:
@@ -156,6 +160,9 @@ namespace OpenIDE
             toolboxWindow.Text = LanguageManager._("Toolbox");
             propertiesWindow.Text = LanguageManager._("Properties");
             teamExplorerWindow.Text = LanguageManager._("Team Explorer");
+            consoleWindow.Text = LanguageManager._("Console");
+            errorsWindow.Text = LanguageManager._("Errors");
+            outputWindow.Text = LanguageManager._("Output");
 
             fileMenuItem.Text = LanguageManager._("File");
             editMenuItem.Text = LanguageManager._("Edit");

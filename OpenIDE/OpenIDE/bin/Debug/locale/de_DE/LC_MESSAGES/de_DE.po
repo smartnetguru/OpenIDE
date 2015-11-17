@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenIDE\n"
-"POT-Creation-Date: 2015-11-02 17:50+0100\n"
-"PO-Revision-Date: 2015-11-17 17:07+0100\n"
+"POT-Creation-Date: 2015-11-17 17:15+0100\n"
+"PO-Revision-Date: 2015-11-17 17:15+0100\n"
 "Last-Translator: Chris Anders <info@furesoft.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -13,22 +13,42 @@ msgstr ""
 "X-Poedit-Basepath: ../../../../../../../../../GitHub/OpenIDE/OpenIDE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _\n"
+"X-Poedit-KeywordsList: LanguageManager._\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: OpenIDE.Core/StartPage.cs:28
+#: OpenIDE.Core/Properties/Resources.Designer.cs:87
+msgid "Module"
+msgstr ""
+
+#: OpenIDE.Core/Properties/Resources.Designer.cs:122
+msgid "query"
+msgstr ""
+
+#: OpenIDE.Core/SolutionExplorer.cs:17
+msgid "Project"
+msgstr "Projekt"
+
+#: OpenIDE.Core/SolutionExplorer.cs:21 OpenIDE/Form1.cs:157
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: OpenIDE.Core/SolutionExplorer.cs:39
+msgid "Solution"
+msgstr "Projektmappe"
+
+#: OpenIDE.Core/StartPage.cs:45
 msgid "Start"
 msgstr "Start"
 
-#: OpenIDE.Core/StartPage.cs:29
+#: OpenIDE.Core/StartPage.cs:46
 msgid "News"
 msgstr "Neuigkeiten"
 
-#: OpenIDE.Core/StartPage.cs:30 OpenIDE/Dialogs/NewProjectDialog.cs:44
+#: OpenIDE.Core/StartPage.cs:47 OpenIDE/Dialogs/NewProjectDialog.cs:44
 msgid "New Project"
 msgstr "Neues Projekt"
 
-#: OpenIDE.Core/StartPage.cs:31
+#: OpenIDE.Core/StartPage.cs:48
 msgid "Open Project"
 msgstr "Projekt öffnen"
 
@@ -63,7 +83,7 @@ msgid "New Item"
 msgstr "Neue Datei"
 
 #: OpenIDE/Dialogs/NewItemDialog.cs:45 OpenIDE/Dialogs/NewProjectDialog.cs:45
-#: OpenIDE/Form1.cs:165
+#: OpenIDE/Form1.cs:190
 msgid "Name"
 msgstr "Name"
 
@@ -83,67 +103,79 @@ msgstr "Installierte Plugins"
 msgid "Online Plugins"
 msgstr "Online Plugins"
 
-#: OpenIDE/Form1.cs:133
+#: OpenIDE/Form1.cs:154
 msgid "Startpage"
 msgstr "Startseite"
 
-#: OpenIDE/Form1.cs:134
+#: OpenIDE/Form1.cs:155
 msgid "SolutionExplorer"
 msgstr "Projektmappen Explorer"
 
-#: OpenIDE/Form1.cs:135
+#: OpenIDE/Form1.cs:156
 msgid "Toolbox"
 msgstr "Toolbox"
 
-#: OpenIDE/Form1.cs:136
-msgid "Properties"
-msgstr "Eigenschaften"
+#: OpenIDE/Form1.cs:158
+msgid "Team Explorer"
+msgstr "Team Explorer"
 
-#: OpenIDE/Form1.cs:138
+#: OpenIDE/Form1.cs:159
+msgid "Console"
+msgstr "Konsole"
+
+#: OpenIDE/Form1.cs:160
+msgid "Errors"
+msgstr "Fehler"
+
+#: OpenIDE/Form1.cs:161
+msgid "Output"
+msgstr "Ausgabe"
+
+#: OpenIDE/Form1.cs:163
 msgid "File"
 msgstr "Datei"
 
-#: OpenIDE/Form1.cs:139
+#: OpenIDE/Form1.cs:164
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: OpenIDE/Form1.cs:140
+#: OpenIDE/Form1.cs:165
 msgid "View"
 msgstr "Ansicht"
 
-#: OpenIDE/Form1.cs:141
+#: OpenIDE/Form1.cs:166
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: OpenIDE/Form1.cs:142
+#: OpenIDE/Form1.cs:167
 msgid "Window"
 msgstr "Fenster"
 
-#: OpenIDE/Form1.cs:143
+#: OpenIDE/Form1.cs:168
 msgid "Help"
 msgstr "Hilfe"
 
-#: OpenIDE/Form1.cs:145
+#: OpenIDE/Form1.cs:170
 msgid "Check for Updates"
 msgstr "Auf Aktualisierung prüfen"
 
-#: OpenIDE/Form1.cs:146
+#: OpenIDE/Form1.cs:171
 msgid "About"
 msgstr "Über"
 
-#: OpenIDE/Form1.cs:148
+#: OpenIDE/Form1.cs:173
 msgid "Open Solution"
 msgstr "Projektmappe öffnen"
 
-#: OpenIDE/Form1.cs:149
+#: OpenIDE/Form1.cs:174
 msgid "Exit"
 msgstr "Schließen"
 
-#: OpenIDE/Form1.cs:155
+#: OpenIDE/Form1.cs:180
 msgid "An Update is available."
 msgstr "Eine Aktualisierung ist verfügbar."
 
-#: OpenIDE/Form1.cs:165
+#: OpenIDE/Form1.cs:190
 msgid "Please specifiy an solution name"
 msgstr "Bitte gebe deiner Projektmappe einen Namen"
 
