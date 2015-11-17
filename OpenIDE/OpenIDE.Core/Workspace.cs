@@ -2,6 +2,7 @@
 using OpenIDE.Core.Contracts;
 using OpenIDE.Core.ProjectSystem;
 using System;
+using System.Collections.Generic;
 using System.Runtime.Caching;
 using Telerik.WinControls.UI.Docking;
 
@@ -42,6 +43,8 @@ namespace OpenIDE.Core
 
         public static MemoryCache Cache { get; set; }
 
+        public static Dictionary<string, DocumentWindow> OpenedDocuments { get; set; }
+
         public static void AddToCache(string key, object value, DateTimeOffset duration)
         {
             Cache.Add(new CacheItem(key, value), new CacheItemPolicy() { AbsoluteExpiration = duration });
@@ -55,6 +58,7 @@ namespace OpenIDE.Core
             SolutionPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             Cache = MemoryCache.Default;
+            OpenedDocuments = new Dictionary<string, DocumentWindow>();
         }
     }
 }

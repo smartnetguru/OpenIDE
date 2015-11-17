@@ -122,7 +122,7 @@ namespace OpenIDE
                             var doc = new DocumentWindow(f.Name);
                             doc.Controls.Add(ViewSelector.Select(np, raw, f, np.AutoCompletionProvider as IntellisenseProvider, doc).GetView());
 
-                            dock.AddDocument(doc);
+                            AddDocument(doc);
 
                             startpageDocument.Hide();
 
@@ -134,6 +134,19 @@ namespace OpenIDE
             RefreshLanguage();
 
             addItemContextItem.Click += radMenuItem13_Click;
+        }
+
+        private void AddDocument(DocumentWindow doc)
+        {
+            if (!Workspace.OpenedDocuments.ContainsKey(doc.Text))
+            {
+                Workspace.OpenedDocuments.Add(doc.Text, doc);
+                dock.AddDocument(doc);
+            }
+            else
+            {
+                dock.ActivateWindow(Workspace.OpenedDocuments[doc.Text]);
+            }
         }
 
         private void RefreshLanguage()
@@ -265,7 +278,7 @@ namespace OpenIDE
                 var doc = new DocumentWindow(f.Name);
                 doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi), f, np.Template.AutoCompletionProvider as IntellisenseProvider).GetView());
 
-                dock.AddDocument(doc);
+                AddDocument(doc);
             }
         }
 
@@ -306,7 +319,7 @@ namespace OpenIDE
                 var doc = new DocumentWindow(e.Node.Text);
                 doc.Controls.Add(v.GetView());
 
-                dock.AddDocument(doc);
+                AddDocument(doc);
             }
             if(f != null)
             {
@@ -335,12 +348,12 @@ namespace OpenIDE
                     raw = System.IO.File.ReadAllBytes(f.Src);
                 }
 
-                nn.Events.Fire("OnCreateItem", np, f, raw);
+                nn?.Events.Fire("OnCreateItem", np, f, raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np, raw, f, np.AutoCompletionProvider as IntellisenseProvider, doc).GetView());
+                doc.Controls.Add(ViewSelector.Select(np, raw, f, np?.AutoCompletionProvider as IntellisenseProvider, doc).GetView());
 
-                dock.AddDocument(doc);
+                AddDocument(doc);
             }
         }
 
@@ -399,6 +412,19 @@ namespace OpenIDE
             Workspace.CurrentDocument.Text = Workspace.CurrentDocument.Text.Replace(" (*)", "");
 
             System.IO.File.WriteAllText(f.Src, edit.Text);
+        }
+
+        private void addItemContextItem_Click(object sender, EventArgs e)
+        {
+            radMenuItem13_Click(sender, e);
+        }
+
+        private void dock_DockWindowClosing(object sender, DockWindowCancelEventArgs e)
+        {
+            if (e.NewWindow is DocumentWindow && e.NewWindow.Name != "startpageDocument")
+            {
+                Workspace.OpenedDocuments.Remove(e.NewWindow.Text);
+            }
         }
     }
 }
