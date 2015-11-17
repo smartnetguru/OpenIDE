@@ -1,4 +1,4 @@
-define("getClass", [], function() {
+$.define("getClass", [], function() {
   var exports = {};
   (function() {
     // A map of basic Object.prototype.toString output to [[Class]] names. This

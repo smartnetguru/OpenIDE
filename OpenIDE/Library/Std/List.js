@@ -1,4 +1,4 @@
-define("List", [], function () {
+$.define("List", [], function () {
     var List = (function () {
         var items = [];
 

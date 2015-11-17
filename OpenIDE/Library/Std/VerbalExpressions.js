@@ -345,7 +345,7 @@
         }
     
         if (typeof define === 'function' && define.amd) {
-            define("VerbalExpression", function(){ return VerbalExpression; });
+            $.define("VerbalExpression", function(){ return VerbalExpression; });
         }
     
     }).call();

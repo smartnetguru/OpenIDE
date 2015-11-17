@@ -1,4 +1,4 @@
-define("Range", [], function () {
+$.define("Range", [], function () {
     var Range = (function () {
         function Range(min, max) {
             this.min = min;

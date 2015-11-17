@@ -1,4 +1,4 @@
-define("Uri", ["Class"], function (cls) {
+$.define("Uri", ["Class"], function (cls) {
     return new cls({
         construct: function (src) {
             function parseUri(str, obj) {

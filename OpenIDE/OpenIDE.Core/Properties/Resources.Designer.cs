@@ -97,5 +97,30 @@ namespace OpenIDE.Core.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die define(&quot;$&quot;, [&quot;Event&quot;], function (event) {
+        ///    function $(callback) {
+        ///        if (callback instanceof Function) {
+        ///            plugin.AddEventListener(&quot;OnReady&quot;, callback);
+        ///        }
+        ///        else if (callback instanceof String) {
+        ///            return property(callback);
+        ///        }
+        ///        else {
+        ///            //ToDo: return new event
+        ///            return new event();
+        ///        }
+        ///    }
+        ///
+        ///    $[&quot;on&quot;] = function (event, callback) {
+        ///        if (event &amp;&amp; callback) {
+        ///            plugin.AddEventListener(event, [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        internal static string query {
+            get {
+                return ResourceManager.GetString("query", resourceCulture);
+            }
+        }
     }
 }

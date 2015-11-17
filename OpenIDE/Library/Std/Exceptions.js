@@ -1,4 +1,4 @@
-define("Exceptions", [], function () {
+$.define("Exceptions", [], function () {
     var TypeNotSupportedError = (function () {
         function TypeNotSupportedError(name, message) {
             this.name = name;

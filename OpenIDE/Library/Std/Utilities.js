@@ -1,4 +1,4 @@
-define("Utils", function () {
+$.define("Utils", function () {
     function print_r(obj, t) {
         // define tab spacing
         var tab = t || '';

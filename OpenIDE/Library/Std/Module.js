@@ -253,7 +253,7 @@
     return create();
 }));
 
-var define = modulejs.define;
-var require = modulejs.require;
+$["define"] = modulejs.define;
+$["require"] = modulejs.require;
 
-define.amd = true;
+$["define"].amd = true;

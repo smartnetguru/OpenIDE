@@ -1,4 +1,4 @@
-define("Event", function () {
+$.define("Event", function () {
     function Event() {
         this._list = [];
     }

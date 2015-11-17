@@ -1,4 +1,4 @@
-define("Tuple", ["Class"], function (Class) {
+$.define("Tuple", ["Class"], function (Class) {
     return new Class({
         construct: function (/* values */) {
             var args = Array.prototype.slice.call(arguments, 0);

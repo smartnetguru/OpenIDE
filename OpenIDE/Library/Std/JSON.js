@@ -1,4 +1,4 @@
-define("JSON", function() {
+$.define("JSON", function() {
     var JSON = {};
 
     (function () {

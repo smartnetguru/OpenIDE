@@ -98,6 +98,7 @@
     <Compile Include="Extensibility\Library.cs" />
     <Compile Include="Extensibility\Plugin.cs" />
     <Compile Include="Extensibility\ProjectTemplate.cs" />
+    <Compile Include="Extensibility\RessourceReader.cs" />
     <Compile Include="Extensibility\ScriptedProviders\IntellisenseProvider.cs" />
     <Compile Include="FilterBuilder\FilterBuilder.cs" />
     <Compile Include="FilterBuilder\FilterGroup.cs" />
@@ -243,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Module.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\query.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

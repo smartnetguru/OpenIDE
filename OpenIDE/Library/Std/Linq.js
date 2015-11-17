@@ -1,4 +1,4 @@
-define("Linq", function() {
+$.define("Linq", function() {
     + function () {
     
         // Default methods

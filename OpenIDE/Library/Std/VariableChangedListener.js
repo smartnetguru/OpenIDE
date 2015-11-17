@@ -7,8 +7,7 @@
  * Public Domain.
  * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
  */
-
-define("watch", function () {
+$.define("watch", function () {
     var obj = {};
 
     // object.watch

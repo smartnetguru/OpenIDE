@@ -1,4 +1,4 @@
-define("Enum", [], function () {
+$.define("Enum", [], function () {
     var Enum = (function () {
         function Enum() {
             var obj = {};

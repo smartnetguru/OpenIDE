@@ -1,4 +1,4 @@
-define("Class", function () {
+$.define("Class", function () {
     function Class(params) {
         var construct = params.construct || function () { };
 

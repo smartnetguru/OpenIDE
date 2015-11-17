@@ -1,4 +1,4 @@
-define("Base64", [], function () {
+$.define("Base64", [], function () {
     var Base64 = (function () {
         function Base64() {
         }

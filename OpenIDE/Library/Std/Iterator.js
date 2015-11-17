@@ -1,4 +1,4 @@
-define("Iterator", [], function () {
+$.define("Iterator", [], function () {
     var Iterator = (function () {
         function Iterator(items) {
             this.index = 0;

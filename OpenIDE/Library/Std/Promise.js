@@ -1,4 +1,4 @@
-define("Promise", function() {
+$.define("Promise", function() {
 	(function(root) {
 	
 		// Use polyfill for setImmediate for performance gains

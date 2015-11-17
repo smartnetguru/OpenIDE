@@ -1,4 +1,4 @@
-define("StringBuilder", [], function () {
+$.define("StringBuilder", [], function () {
     var StringBuilder = (function () {
         function StringBuilder() {
             this.buffer = [],

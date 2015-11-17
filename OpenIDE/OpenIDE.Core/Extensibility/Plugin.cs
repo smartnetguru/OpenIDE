@@ -29,6 +29,7 @@ namespace OpenIDE.Core.Extensibility
         public WindowCollection Windows { get; set; }
         public string Filename { get; set; }
         public EventStorage Events { get; set; }
+        public ZipFile Archive { get; private set; }
 
         public delegate object StaticMethodFunc(params object[] args);
 
@@ -48,9 +49,13 @@ namespace OpenIDE.Core.Extensibility
 
         private void InitEngine(ZipFile z)
         {
+            _engine.Execute(Resources.query);
             _engine.Execute(Resources.Module);
 
+            _engine.Add("RessourceReader", typeof(RessourceReader));
             _engine.Add("host", new ExtendedHostFunctions());
+
+            _engine.Execute("$['res'] = function(plugin, name) {return new RessourceReader(plugin).Read(name);}");
 
             // add function to script engine to control the properties
             _engine.Add<Delegate>("property", new StaticMethodFunc(args =>
@@ -103,6 +108,8 @@ namespace OpenIDE.Core.Extensibility
             var z = new ZipFile(name);
             var parts = z.Entries;
             var pa = parts.ToList();
+
+            p.Archive = z;
 
             StringBuilder sources = new StringBuilder();
 
@@ -246,6 +253,8 @@ namespace OpenIDE.Core.Extensibility
 
         public void Dispose()
         {
+            Events.Fire("OnDispose");
+            
             Dependencies = null;
             Filename = null;
             Icons = null;
