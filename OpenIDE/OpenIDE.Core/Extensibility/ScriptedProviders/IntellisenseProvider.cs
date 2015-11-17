@@ -1,24 +1,23 @@
 ﻿using System.Windows.Forms;
 using DigitalRune.Windows.TextEditor;
 using DigitalRune.Windows.TextEditor.Completion;
-using System.Collections.Generic;
-using System.Linq;
+using OpenIDE.Library;
 
 namespace OpenIDE.Core.Extensibility.ScriptedProviders
 {
-    public class ScriptedCompletionProvider : AbstractCompletionDataProvider
+    public class IntellisenseProvider : AbstractCompletionDataProvider
     {
-        private List<string> _callback;
-        public ScriptedCompletionProvider(List<string> callback)
+        private Intellisense _intellisense;
+        public IntellisenseProvider(Intellisense intellisense)
         {
-            _callback = callback;
+            _intellisense = intellisense;
         }
 
         public override ImageList ImageList => new ImageList();
 
         public override ICompletionData[] GenerateCompletionData(string fileName, TextArea textArea, char charTyped)
         {
-            return (from c in _callback select new DefaultCompletionData(c, "", -1)).ToArray();
+            return _intellisense._data.ToArray();
         }
     }
 }

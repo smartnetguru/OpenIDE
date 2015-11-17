@@ -19,6 +19,8 @@ define("List", [], function () {
         List.prototype.get = function (index) {
             return _items[index];
         };
+
+
         return List;
     })();
 

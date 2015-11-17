@@ -92,15 +92,6 @@ namespace OpenIDE.Core.Extensibility
             _engine.Add("register_window", new Action<string, Window>((n, w) => Windows.Add(n, w)));
 
             _engine.Add("debug", Workspace.Output);
-            _engine.Add("register_completion", new Action<string, dynamic>((id, _) => {
-                foreach (var item in ItemTemplates)
-                {
-                    if(item.ID == Guid.Parse(id))
-                    {
-                        //item.AutoCompletionProvider = new ScriptedCompletionProvider(new List<string>(_));
-                    }
-                }
-            }));
 
             Events.Fire("OnReady");
         }
@@ -181,10 +172,12 @@ namespace OpenIDE.Core.Extensibility
             var t = Info["Templates"] as ObjectValue;
             var items = (t.Value["Item"] as ArrayValue).Value;
 
+            JsonExtensionResolver.Archive = z; 
+
             foreach (var tt in items)
             {
                 var obj = (tt as ObjectValue).Value;
-                var te = new ItemTemplate();
+                var te = new ItemTemplate(this);
 
                 te.ProjectID = Guid.Parse(JsonExtensionResolver.Resolve<string>(Info["ID"].ToString()));
 

@@ -98,7 +98,7 @@
     <Compile Include="Extensibility\Library.cs" />
     <Compile Include="Extensibility\Plugin.cs" />
     <Compile Include="Extensibility\ProjectTemplate.cs" />
-    <Compile Include="Extensibility\ScriptedProviders\ScriptedCompletionProvider.cs" />
+    <Compile Include="Extensibility\ScriptedProviders\IntellisenseProvider.cs" />
     <Compile Include="FilterBuilder\FilterBuilder.cs" />
     <Compile Include="FilterBuilder\FilterGroup.cs" />
     <Compile Include="FilterBuilder\Helpers.cs" />
@@ -116,6 +116,8 @@
     <Compile Include="IntellisensDefinition\Method.cs" />
     <Compile Include="IntellisensDefinition\Object.cs" />
     <Compile Include="JsonExtensions\Engine\JsonExtensionResolver.cs" />
+    <Compile Include="JsonExtensions\IconExtension.cs" />
+    <Compile Include="JsonExtensions\ResourceExtension.cs" />
     <Compile Include="JsonExtensions\GuidExtension.cs" />
     <Compile Include="JSON\ArrayValue.cs" />
     <Compile Include="JSON\Framework\CharParsers.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Extensibility\PluginManager.cs" />
     <Compile Include="ProjectSystem\File.cs" />
     <Compile Include="ProjectSystem\FileCollection.cs" />
+    <Compile Include="ProjectSystem\Folder.cs" />
     <Compile Include="ProjectSystem\Project.cs" />
     <Compile Include="ProjectSystem\Solution.cs" />
     <Compile Include="Prompt.cs" />

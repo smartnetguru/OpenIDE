@@ -1,5 +1,6 @@
 ﻿using OpenIDE.Core.Contracts;
 using OpenIDE.Core.Extensibility;
+using OpenIDE.Core.Extensibility.ScriptedProviders;
 using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Views;
 using Telerik.WinControls.UI.Docking;
@@ -8,7 +9,7 @@ namespace OpenIDE.Core
 {
     public class ViewSelector
     {
-        public static View Select(ItemTemplate it, byte[] data, File file, DockWindow window = null)
+        public static View Select(ItemTemplate it, byte[] data, File file, IntellisenseProvider intellisenseOProvider, DockWindow window = null)
         {
             if(it.View != null)
             {
@@ -22,6 +23,7 @@ namespace OpenIDE.Core
             {
                 var v = new EditorView(it, file);
                 v.Window = window;
+                v.IntellisenseProvider = intellisenseOProvider;
 
                 v.Create(data);
                 

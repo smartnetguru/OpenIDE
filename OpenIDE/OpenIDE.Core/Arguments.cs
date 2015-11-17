@@ -6,12 +6,12 @@ namespace OpenIDE.Core
     public class Arguments
     {
         // Variables
-        private StringDictionary Parameters;
+        private StringDictionary parameters;
 
         // Constructor
         public Arguments(string[] Args)
         {
-            Parameters = new StringDictionary();
+            parameters = new StringDictionary();
             Regex Spliter = new Regex(@"^-{1,2}|^/|=|:",
                 RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -39,12 +39,12 @@ namespace OpenIDE.Core
                     case 1:
                         if (Parameter != null)
                         {
-                            if (!Parameters.ContainsKey(Parameter))
+                            if (!parameters.ContainsKey(Parameter))
                             {
                                 Parts[0] =
                                     Remover.Replace(Parts[0], "$1");
 
-                                Parameters.Add(Parameter, Parts[0]);
+                                parameters.Add(Parameter, Parts[0]);
                             }
                             Parameter = null;
                         }
@@ -57,8 +57,8 @@ namespace OpenIDE.Core
                         // With no value, set it to true.
                         if (Parameter != null)
                         {
-                            if (!Parameters.ContainsKey(Parameter))
-                                Parameters.Add(Parameter, "true");
+                            if (!parameters.ContainsKey(Parameter))
+                                parameters.Add(Parameter, "true");
                         }
                         Parameter = Parts[1];
                         break;
@@ -69,17 +69,17 @@ namespace OpenIDE.Core
                         // With no value, set it to true.
                         if (Parameter != null)
                         {
-                            if (!Parameters.ContainsKey(Parameter))
-                                Parameters.Add(Parameter, "true");
+                            if (!parameters.ContainsKey(Parameter))
+                                parameters.Add(Parameter, "true");
                         }
 
                         Parameter = Parts[1];
 
                         // Remove possible enclosing characters (",')
-                        if (!Parameters.ContainsKey(Parameter))
+                        if (!parameters.ContainsKey(Parameter))
                         {
                             Parts[2] = Remover.Replace(Parts[2], "$1");
-                            Parameters.Add(Parameter, Parts[2]);
+                            parameters.Add(Parameter, Parts[2]);
                         }
 
                         Parameter = null;
@@ -89,8 +89,8 @@ namespace OpenIDE.Core
             // In case a parameter is still waiting
             if (Parameter != null)
             {
-                if (!Parameters.ContainsKey(Parameter))
-                    Parameters.Add(Parameter, "true");
+                if (!parameters.ContainsKey(Parameter))
+                    parameters.Add(Parameter, "true");
             }
         }
 
@@ -100,9 +100,9 @@ namespace OpenIDE.Core
         {
             get
             {
-                if (Parameters.ContainsKey(Param))
+                if (parameters.ContainsKey(Param))
                 {
-                    return (Parameters[Param]);
+                    return (parameters[Param]);
                 }
                 else
                 {

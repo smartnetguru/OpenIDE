@@ -2,6 +2,7 @@
 using OpenIDE.Core;
 using OpenIDE.Core.Dialogs;
 using OpenIDE.Core.Extensibility;
+using OpenIDE.Core.Extensibility.ScriptedProviders;
 using OpenIDE.Core.ProjectSystem;
 using OpenIDE.Core.Views;
 using OpenIDE.Dialogs;
@@ -116,10 +117,10 @@ namespace OpenIDE
 
                             var raw = System.IO.File.ReadAllBytes(file);
 
-                            npp.Events.Fire("OnCreateItem", f, raw);
+                            npp.Events.Fire("OnCreateItem", np, f, raw);
 
                             var doc = new DocumentWindow(f.Name);
-                            doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
+                            doc.Controls.Add(ViewSelector.Select(np, raw, f, np.AutoCompletionProvider as IntellisenseProvider, doc).GetView());
 
                             dock.AddDocument(doc);
 
@@ -262,7 +263,7 @@ namespace OpenIDE
                 np.Plugin.Events.Fire("OnCreateItem", f, np.Template.Raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi), f).GetView());
+                doc.Controls.Add(ViewSelector.Select(np.Template, System.IO.File.ReadAllBytes(fi), f, np.Template.AutoCompletionProvider as IntellisenseProvider).GetView());
 
                 dock.AddDocument(doc);
             }
@@ -334,10 +335,10 @@ namespace OpenIDE
                     raw = System.IO.File.ReadAllBytes(f.Src);
                 }
 
-                nn.Events.Fire("OnCreateItem", f, raw);
+                nn.Events.Fire("OnCreateItem", np, f, raw);
 
                 var doc = new DocumentWindow(f.Name);
-                doc.Controls.Add(ViewSelector.Select(np, raw, f, doc).GetView());
+                doc.Controls.Add(ViewSelector.Select(np, raw, f, np.AutoCompletionProvider as IntellisenseProvider, doc).GetView());
 
                 dock.AddDocument(doc);
             }

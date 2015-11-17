@@ -1,6 +1,7 @@
 ﻿using DigitalRune.Windows.TextEditor;
 using OpenIDE.Core.Contracts;
 using OpenIDE.Core.Extensibility;
+using OpenIDE.Core.Extensibility.ScriptedProviders;
 using OpenIDE.Core.ProjectSystem;
 
 namespace OpenIDE.Core.Views
@@ -10,16 +11,21 @@ namespace OpenIDE.Core.Views
         bool firstEdit = true;
 
         public File File { get; set; }
+        public IntellisenseProvider IntellisenseProvider { get; internal set; }
 
         public EditorView(ItemTemplate p, File f)
         {
-            var e = EditorBuilder.Build(p.Extension, null, null, null);
+            var e = EditorBuilder.Build(p.Extension, null, null);
             e.CompletionRequest += (s, ee) =>
             {
                 if (p.AutoCompletionProvider != null)
                 {
-                    //e.ShowCompletionWindow(p.AutoCompletionProvider, ee.Key, true);
+                    e.ShowCompletionWindow(p.AutoCompletionProvider, ee.Key, true);
                 }
+            };
+            e.DocumentChanged += (s, ev) =>
+            {
+                p.Plugin.Events.Fire("OnDocumentChanged", p, ev.Document.TextContent);
             };
 
             e.Tag = this;

@@ -16,7 +16,7 @@ namespace OpenIDE.Core
         private static AbstractInsightDataProvider _insight = null;
 
         public static TextEditorControl Build(string highlighting, 
-            AbstractCompletionDataProvider completionProvider, IFoldingStrategy foldingStrategy, 
+            IFoldingStrategy foldingStrategy, 
             AbstractInsightDataProvider insight)
         {
             var ret = new TextEditorControl();

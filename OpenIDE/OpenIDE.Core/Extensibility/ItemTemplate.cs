@@ -1,4 +1,6 @@
 ﻿using OpenIDE.Core.Contracts;
+using OpenIDE.Core.Extensibility.ScriptedProviders;
+using OpenIDE.Library;
 using System;
 using System.Drawing;
 
@@ -16,11 +18,17 @@ namespace OpenIDE.Core.Extensibility
         public string ViewSource { get; internal set; }
         public byte[] Raw { get; set; }
         public DigitalRune.Windows.TextEditor.Completion.AbstractCompletionDataProvider AutoCompletionProvider { get; set; }
+        public Intellisense Intellisense { get; set; }
+        public Plugin Plugin { get; set; }
 
-        public ItemTemplate()
+        public ItemTemplate(Plugin plugin)
         {
             Name = "";
             ID = Guid.Empty;
+            Intellisense = new Intellisense();
+
+            AutoCompletionProvider = new IntellisenseProvider(Intellisense);
+            Plugin = plugin;
         }
     }
 }
