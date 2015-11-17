@@ -426,5 +426,17 @@ namespace OpenIDE
                 Workspace.OpenedDocuments.Remove(e.NewWindow.Text);
             }
         }
+
+        private void renameSolutionContextItem_Click(object sender, EventArgs e)
+        {
+            var newName = Prompt.Show("Please enter a new Name", "Rename");
+
+            Workspace.Solution.Name = newName;
+
+            explorerTreeView.Nodes.Clear();
+            explorerTreeView.Nodes.Add(SolutionExplorer.Build(Workspace.Solution, solutionContextMenu, projectContextMenu, fileContextMenu));
+
+            Workspace.Solution.Save(Workspace.SolutionPath);
+        }
     }
 }

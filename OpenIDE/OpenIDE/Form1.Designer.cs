@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup1 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
-            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup2 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
-            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup3 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
+            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup4 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
+            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup5 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
+            Telerik.WinControls.UI.Docking.AutoHideGroup autoHideGroup6 = new Telerik.WinControls.UI.Docking.AutoHideGroup();
             this.dockWindowPlaceholder2 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
             this.dockWindowPlaceholder3 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
             this.dockWindowPlaceholder4 = new Telerik.WinControls.UI.Docking.DockWindowPlaceholder();
@@ -81,7 +81,6 @@
             this.errorsListBox = new Telerik.WinControls.UI.RadListControl();
             this.outputWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.outputTextBox = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.consoleWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
@@ -89,11 +88,13 @@
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.projectContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
             this.addItemContextItem = new Telerik.WinControls.UI.RadMenuItem();
-            this.consoleControl = new OpenIDE.Core.Controls.ShellControl();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.toolTabStrip2 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.fileContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
             this.solutionContextMenu = new Telerik.WinControls.UI.RadContextMenu(this.components);
+            this.consoleWindow = new Telerik.WinControls.UI.Docking.ToolWindow();
+            this.consoleControl = new OpenIDE.Core.Controls.ShellControl();
+            this.renameSolutionContextItem = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dock)).BeginInit();
             this.dock.SuspendLayout();
@@ -120,11 +121,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorsListBox)).BeginInit();
             this.outputWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outputTextBox)).BeginInit();
-            this.consoleWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip2)).BeginInit();
+            this.consoleWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -375,7 +376,7 @@
             // 
             // dock
             // 
-            this.dock.ActiveWindow = this.consoleWindow;
+            this.dock.ActiveWindow = this.solutionExplorerWindow;
             this.dock.CausesValidation = false;
             this.dock.Controls.Add(this.radSplitContainer4);
             this.dock.Controls.Add(this.toolTabStrip1);
@@ -390,13 +391,13 @@
             // 
             // 
             this.dock.RootElement.MinSize = new System.Drawing.Size(0, 0);
-            autoHideGroup1.Windows.Add(this.dockWindowPlaceholder2);
-            autoHideGroup1.Windows.Add(this.dockWindowPlaceholder3);
-            autoHideGroup2.Windows.Add(this.dockWindowPlaceholder4);
-            this.dock.SerializableAutoHideContainer.BottomAutoHideGroups.Add(autoHideGroup1);
-            this.dock.SerializableAutoHideContainer.BottomAutoHideGroups.Add(autoHideGroup2);
-            autoHideGroup3.Windows.Add(this.dockWindowPlaceholder1);
-            this.dock.SerializableAutoHideContainer.LeftAutoHideGroups.Add(autoHideGroup3);
+            autoHideGroup4.Windows.Add(this.dockWindowPlaceholder2);
+            autoHideGroup4.Windows.Add(this.dockWindowPlaceholder3);
+            autoHideGroup5.Windows.Add(this.dockWindowPlaceholder4);
+            this.dock.SerializableAutoHideContainer.BottomAutoHideGroups.Add(autoHideGroup4);
+            this.dock.SerializableAutoHideContainer.BottomAutoHideGroups.Add(autoHideGroup5);
+            autoHideGroup6.Windows.Add(this.dockWindowPlaceholder1);
+            this.dock.SerializableAutoHideContainer.LeftAutoHideGroups.Add(autoHideGroup6);
             this.dock.Size = new System.Drawing.Size(897, 437);
             this.dock.SplitterWidth = 2;
             this.dock.TabIndex = 2;
@@ -640,7 +641,7 @@
             this.errorsWindow.Location = new System.Drawing.Point(4, 24);
             this.errorsWindow.Name = "errorsWindow";
             this.errorsWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.errorsWindow.Size = new System.Drawing.Size(889, 147);
+            this.errorsWindow.Size = new System.Drawing.Size(889, 172);
             this.errorsWindow.Text = "Errors";
             // 
             // errorsListBox
@@ -648,7 +649,7 @@
             this.errorsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.errorsListBox.Location = new System.Drawing.Point(0, 0);
             this.errorsListBox.Name = "errorsListBox";
-            this.errorsListBox.Size = new System.Drawing.Size(889, 147);
+            this.errorsListBox.Size = new System.Drawing.Size(889, 172);
             this.errorsListBox.TabIndex = 0;
             this.errorsListBox.ThemeName = "VisualStudio2012Dark";
             // 
@@ -673,17 +674,6 @@
             this.outputTextBox.Size = new System.Drawing.Size(889, 147);
             this.outputTextBox.TabIndex = 0;
             this.outputTextBox.ThemeName = "VisualStudio2012Dark";
-            // 
-            // consoleWindow
-            // 
-            this.consoleWindow.Caption = null;
-            this.consoleWindow.Controls.Add(this.consoleControl);
-            this.consoleWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.consoleWindow.Location = new System.Drawing.Point(4, 24);
-            this.consoleWindow.Name = "consoleWindow";
-            this.consoleWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.consoleWindow.Size = new System.Drawing.Size(889, 147);
-            this.consoleWindow.Text = "Console";
             // 
             // radDesktopAlert1
             // 
@@ -722,18 +712,6 @@
             this.addItemContextItem.Text = "Add Item";
             this.addItemContextItem.Click += new System.EventHandler(this.addItemContextItem_Click);
             // 
-            // consoleControl
-            // 
-            this.consoleControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.consoleControl.Location = new System.Drawing.Point(0, 0);
-            this.consoleControl.Name = "consoleControl";
-            this.consoleControl.Prompt = ">>>";
-            this.consoleControl.ShellTextBackColor = System.Drawing.Color.Black;
-            this.consoleControl.ShellTextFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consoleControl.ShellTextForeColor = System.Drawing.Color.LawnGreen;
-            this.consoleControl.Size = new System.Drawing.Size(889, 147);
-            this.consoleControl.TabIndex = 0;
-            // 
             // toolTabStrip1
             // 
             this.toolTabStrip1.CanUpdateChildIndex = true;
@@ -745,7 +723,7 @@
             // 
             // 
             // 
-            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip1.SelectedIndex = 2;
             this.toolTabStrip1.Size = new System.Drawing.Size(897, 200);
             this.toolTabStrip1.TabIndex = 5;
@@ -765,6 +743,42 @@
             this.toolTabStrip2.TabIndex = 0;
             this.toolTabStrip2.TabStop = false;
             this.toolTabStrip2.ThemeName = "VisualStudio2012Dark";
+            // 
+            // solutionContextMenu
+            // 
+            this.solutionContextMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.renameSolutionContextItem});
+            // 
+            // consoleWindow
+            // 
+            this.consoleWindow.Caption = null;
+            this.consoleWindow.Controls.Add(this.consoleControl);
+            this.consoleWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.consoleWindow.Location = new System.Drawing.Point(4, 24);
+            this.consoleWindow.Name = "consoleWindow";
+            this.consoleWindow.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
+            this.consoleWindow.Size = new System.Drawing.Size(889, 147);
+            this.consoleWindow.Text = "Console";
+            // 
+            // consoleControl
+            // 
+            this.consoleControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consoleControl.Location = new System.Drawing.Point(0, 0);
+            this.consoleControl.Name = "consoleControl";
+            this.consoleControl.Prompt = ">>>";
+            this.consoleControl.ShellTextBackColor = System.Drawing.Color.Black;
+            this.consoleControl.ShellTextFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consoleControl.ShellTextForeColor = System.Drawing.Color.LawnGreen;
+            this.consoleControl.Size = new System.Drawing.Size(889, 147);
+            this.consoleControl.TabIndex = 0;
+            // 
+            // renameSolutionContextItem
+            // 
+            this.renameSolutionContextItem.AccessibleDescription = "Rename Solution";
+            this.renameSolutionContextItem.AccessibleName = "Rename Solution";
+            this.renameSolutionContextItem.Name = "renameSolutionContextItem";
+            this.renameSolutionContextItem.Text = "Rename Solution";
+            this.renameSolutionContextItem.Click += new System.EventHandler(this.renameSolutionContextItem_Click);
             // 
             // Form1
             // 
@@ -811,11 +825,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorsListBox)).EndInit();
             this.outputWindow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outputTextBox)).EndInit();
-            this.consoleWindow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip2)).EndInit();
+            this.consoleWindow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -884,5 +898,6 @@
         private Telerik.WinControls.UI.Docking.ToolTabStrip toolTabStrip2;
         private Telerik.WinControls.UI.RadContextMenu fileContextMenu;
         private Telerik.WinControls.UI.RadContextMenu solutionContextMenu;
+        private Telerik.WinControls.UI.RadMenuItem renameSolutionContextItem;
     }
 }
