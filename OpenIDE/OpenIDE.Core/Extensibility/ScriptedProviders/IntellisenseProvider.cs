@@ -8,15 +8,22 @@ namespace OpenIDE.Core.Extensibility.ScriptedProviders
     public class IntellisenseProvider : AbstractCompletionDataProvider
     {
         private Intellisense _intellisense;
+        private ImageList _images = new ImageList();
+
         public IntellisenseProvider(Intellisense intellisense)
         {
             _intellisense = intellisense;
         }
 
-        public override ImageList ImageList => new ImageList();
+        public override ImageList ImageList => _images;
 
         public override ICompletionData[] GenerateCompletionData(string fileName, TextArea textArea, char charTyped)
         {
+            foreach (var item in _intellisense._icons)
+            {
+                _images.Images.Add(item);
+            }
+
             return _intellisense._data.ToArray();
         }
     }

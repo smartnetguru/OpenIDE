@@ -23,6 +23,7 @@ namespace OpenIDE.Core.Views
                     e.ShowCompletionWindow(p.AutoCompletionProvider, ee.Key, true);
                 }
             };
+
             e.DocumentChanged += (s, ev) =>
             {
                 p.Plugin.Events.Fire("OnDocumentChanged", p, ev.Document.TextContent);

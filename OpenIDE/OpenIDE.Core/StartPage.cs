@@ -12,16 +12,17 @@ namespace OpenIDE.Core
         {
             InitializeComponent();
 
-            /* var rss = new RssManager("");
+            var rss = new RssManager("http://furesoft.de/rss.php");
 
-             foreach (var feed in rss.GetFeed())
-             {
-                 var item = new RadListDataItem();
-                 item.Text = feed.Title;
+            var feeds = rss.GetFeed();
 
-
-                 newsList.Items.Add(item);
-             }*/
+            foreach (var feed in feeds)
+            {
+                var item = new RadListDataItem();
+                item.Text = feed.Title;
+                
+                newsList.Items.Add(item);
+            }
 
             _open = open;
             _newProj = newProj;

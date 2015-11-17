@@ -73,12 +73,14 @@ namespace OpenIDE.Core.Extensibility
 
                 return null;
             }));
+
             /*_engine.Add("require", new Action<string>(_ =>
             {
                 var i = new StreamReader(z[_].OpenReader());
 
                 _engine.Execute(i.ReadToEnd());
             }));*/
+
             _engine.Add("import", new Action<string>(_ =>
             {
                 var l = Library.Load(_);
